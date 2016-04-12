@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.0.18
 -- Dumped by pg_dump version 9.0.18
--- Started on 2016-04-11 16:01:05
+-- Started on 2016-04-12 16:08:25
 
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -89,7 +89,7 @@ ALTER TABLE public.questions_id_seq OWNER TO postgres;
 -- Name: questions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('questions_id_seq', 6, true);
+SELECT pg_catalog.setval('questions_id_seq', 8, true);
 
 
 --
@@ -122,7 +122,7 @@ CREATE TABLE users (
     kode character varying(20) NOT NULL,
     nama character varying(60) NOT NULL,
     username character varying(20) NOT NULL,
-    password character varying(50) NOT NULL,
+    password character varying(60) NOT NULL,
     level_id integer
 );
 
@@ -210,7 +210,7 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('users_id_seq', 1, false);
+SELECT pg_catalog.setval('users_id_seq', 4, true);
 
 
 --
@@ -247,8 +247,8 @@ ALTER TABLE ONLY users_answers ALTER COLUMN id SET DEFAULT nextval('users_answer
 --
 
 COPY levels (id, level) FROM stdin;
-1	admin
-2	peserta
+1	Administrator
+2	Peserta
 \.
 
 
@@ -265,6 +265,8 @@ COPY questions (id, question, option_a, option_b, option_c, option_d, flag_answe
 4	Tugas pokok BPS adalah	Menyurvei	Menyensus	Menggoreng	Memasak	d
 5	Mengapa harus dientri?	Supaya betul	supaya cocok	supaya mantap	daripada enggak?	c
 6	Pernahkah anda ikut kegiatan survei bps	ya sebagai pencacah	Ya, sebagai pengawas	ya sebagai pengentri	tidak pernah	c
+7	<p>Siapakah saya?</p>	<p>Embuh</p>	<p>Sakarepmu</p>	<p>Aku ra ngerti</p>	<p>yowes</p>	d
+8	<p>Gambar apakah ini ?</p>\r\n<p><img src="../quirk/images/photos/loggeduser.png" alt="" width="128" height="128" /></p>	<p>asas</p>	<p>sasas</p>	<p>sdsd</p>	<p>fdfdf</p>	c
 \.
 
 
@@ -275,6 +277,8 @@ COPY questions (id, question, option_a, option_b, option_c, option_d, flag_answe
 --
 
 COPY users (id, kode, nama, username, password, level_id) FROM stdin;
+1	6100.001	Muhammad Farid Fadhlan	farid	$2y$13$6yWNXcQYyRGBAdmAYi1b6Oa3Fm6uzsBMlUVA20X0rp16gz488QCly	1
+4	6100.101	Joko Widodo	jokowi	$2y$13$6yWNXcQYyRGBAdmAYi1b6Oa3Fm6uzsBMlUVA20X0rp16gz488QCly	2
 \.
 
 
@@ -397,7 +401,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2016-04-11 16:01:07
+-- Completed on 2016-04-12 16:08:26
 
 --
 -- PostgreSQL database dump complete

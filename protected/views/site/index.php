@@ -1,64 +1,20 @@
 <div class="row">
-    
-    
-<div class="col-md-12 col-lg-12 dash-left">
-    <div id="wizard-basic">
-            <?php 
-            $no = 0;
-            $hal = 0;
-            ?>
-            <?php foreach($model as $data):?>
-            <?php $no++;?>
-            <?php if($no%2==1):?>
-            <?php $hal++;?>
-            <h3>Hal. <?php echo $hal;?></h3>
-            <div>
-                <table class="soal">
-            <?php endif;
-            
-            ?>
-                    <tr>
-                        <td class="depan"><?php echo $no;?>.</td>
-                        <td><?php echo $data->question;?></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <table class="soal">
-                                
-                                <tr>
-                                    <td class="jawaban"><input type="radio" name="q[<?php echo ($no-1);?>]" /></td>
-                                    <td class="jawaban"> a.</td>
-                                    <td><?php echo $data->option_a;?></td>
-                                </tr>
-                                <tr>
-                                    <td class="jawaban"><input type="radio" name="q[<?php echo ($no-1);?>]" /></td>
-                                    <td class="jawaban"> b.</td>
-                                    <td><?php echo $data->option_b;?></td>
-                                </tr>
-                                <tr>
-                                    <td class="jawaban"><input type="radio" name="q[<?php echo ($no-1);?>]" /></td>
-                                    <td class="jawaban"> c.</td>
-                                    <td><?php echo $data->option_c;?></td>
-                                </tr>
-                                <tr>
-                                    <td class="jawaban"><input type="radio" name="q[<?php echo ($no-1);?>]" /></td>
-                                    <td class="jawaban"> d.</td>
-                                    <td><?php echo $data->option_d;?></td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr><td>&nbsp;</td></tr>
-                <?php if($no%2==0 || $no==count($model)):?>
-                </table>
+    <div class="col-md-12 col-lg-12 dash-left">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Selamat Datang</h3>
             </div>
-            <?php endif;endforeach;?>
-          </div>
-        
-
+            <div class="panel-body" style="min-height: 400px;">
+              <p>Think Defferent</p>
+              <p>Here’s to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. The ones who see things differently. They’re not fond of rules. And they have no respect for the status quo. You can quote them, disagree with them, glorify or vilify them. About the only thing you can’t do is ignore them. Because they change things. They push the human race forward. And while some may see them as the crazy ones, we see genius. Because the people who are crazy enough to think they can change the world, are the ones who do.</p>
+              <p>Here’s to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. The ones who see things differently. They’re not fond of rules. And they have no respect for the status quo. You can quote them, disagree with them, glorify or vilify them. About the only thing you can’t do is ignore them. Because they change things. They push the human race forward. And while some may see them as the crazy ones, we see genius. Because the people who are crazy enough to think they can change the world, are the ones who do.</p>
+              <p>Here’s to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. The ones who see things differently. They’re not fond of rules. And they have no respect for the status quo. You can quote them, disagree with them, glorify or vilify them. About the only thing you can’t do is ignore them. Because they change things. They push the human race forward. And while some may see them as the crazy ones, we see genius. Because the people who are crazy enough to think they can change the world, are the ones who do.</p>
+              <p>Here’s to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. The ones who see things differently. They’re not fond of rules. And they have no respect for the status quo. You can quote them, disagree with them, glorify or vilify them. About the only thing you can’t do is ignore them. Because they change things. They push the human race forward. And while some may see them as the crazy ones, we see genius. Because the people who are crazy enough to think they can change the world, are the ones who do.</p>
+              <p>Here’s to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. The ones who see things differently. They’re not fond of rules. And they have no respect for the status quo. You can quote them, disagree with them, glorify or vilify them. About the only thing you can’t do is ignore them. Because they change things. They push the human race forward. And while some may see them as the crazy ones, we see genius. Because the people who are crazy enough to think they can change the world, are the ones who do.</p>
+              <br />
+              <?php echo CHtml::link("Mulai Tes", array("ujian/mulai"), array("class"=>"btn btn-primary"));?>
+              
+            </div>
+          </div><!-- panel -->
+    </div>
 </div>
-  </div><!-- row -->
-
-</div><!-- col-md-3 -->
-</div><!-- row -->

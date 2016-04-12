@@ -2270,7 +2270,7 @@ th {
 .table > thead > tr > td,
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
-  padding: 10px 15px;
+  padding: 6px 15px;
   line-height: 1.42857143;
   vertical-align: top;
   border-top: 1px solid #ffffff;
@@ -4787,12 +4787,12 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   background-color: #bac1ce;
   border-color: transparent;
 }
-.pagination > .active > a,
-.pagination > .active > span,
-.pagination > .active > a:hover,
-.pagination > .active > span:hover,
-.pagination > .active > a:focus,
-.pagination > .active > span:focus {
+.pagination > .selected > a,
+.pagination > .selected > span,
+.pagination > .selected > a:hover,
+.pagination > .selected > span:hover,
+.pagination > .selected > a:focus,
+.pagination > .selected > span:focus {
   z-index: 2;
   color: #ffffff;
   background-color: #259dab;
@@ -13061,8 +13061,8 @@ fieldset[disabled] .btn-fb.active {
 }
 .table > thead > tr > td,
 .table > thead > tr > th {
-  padding-top: 13px;
-  padding-bottom: 13px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 .table > .success > tr > th,
 .table > .success > tr > td {
@@ -14003,7 +14003,7 @@ fieldset[disabled] .btn-fb.active {
   margin-top: 20px;
   text-transform: none;
   font-weight: 200;
-  font-size: 20px;
+  font-size: 16px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   letter-spacing: .7px;
 }
@@ -14039,12 +14039,7 @@ fieldset[disabled] .btn-fb.active {
   }
 }
 .signpanel {
-  background-color: rgba(0, 0, 0, 0.95);
-  background-image: -webkit-linear-gradient(left, transparent 0%, #1b1f27 100%);
-  background-image: -o-linear-gradient(left, transparent 0%, #1b1f27 100%);
-  background-image: linear-gradient(to right, transparent 0%, #1b1f27 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#ff1b1f27', GradientType=1);
+  background-color: #9F9F9F;
   position: fixed;
   top: 0;
   right: 0;
@@ -14071,6 +14066,11 @@ fieldset[disabled] .btn-fb.active {
   padding: 20px;
   z-index: 300;
 }
+
+.signin h1 {
+    font-size: 20px;
+}
+
 @media (max-width: 767px) {
   .signin {
     top: 20px;
@@ -14213,8 +14213,8 @@ fieldset[disabled] .btn-fb.active {
 .dash-right .table > tbody > tr > td,
 .dash-left .table > tfoot > tr > td,
 .dash-right .table > tfoot > tr > td {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 11px;
+  padding-right: 11px;
 }
 @media (min-width: 992px) and (max-width: 1024px) {
   .dash-left,
@@ -14524,6 +14524,7 @@ table.soal{
 
 table.soal td{
     background: none;
+    vertical-align: text-top;
 }
 
 table.soal td.depan {
@@ -14532,4 +14533,9 @@ table.soal td.depan {
 
 table.soal td.jawaban {
     padding-right:10px;
+}
+
+table.soal p{
+    margin:0;
+    padding:0;
 }

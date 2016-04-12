@@ -5,6 +5,31 @@ class SiteController extends Controller
 	/**
 	 * Declares class-based actions.
 	 */
+    
+        public function filters()
+	{
+		return array(
+			'accessControl', // perform access control for CRUD operations
+		);
+	}
+        
+        public function accessRules()
+	{
+		return array(
+			array('allow',  // allow all users to access 'index' and 'view' actions.
+				'actions'=>array('login', 'hash'),
+				'users'=>array('*'),
+			),
+			array('allow', // allow authenticated users to access all actions
+                            'actions'=>array('index','logout','error'),
+                            'users'=>array('@'),
+			),
+			array('deny',  // deny all users
+                            'users'=>array('*'),
+			),
+		);
+	}
+    
 	public function actions()
 	{
 		return array(
@@ -27,10 +52,7 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
-            $model = Question::model()->findAll();
-            $this->render('index', compact('model'));
+            $this->render('index');
 	}
 
 	/**
@@ -78,14 +100,8 @@ class SiteController extends Controller
 	 */
 	public function actionLogin()
 	{
+            $this->layout = "//layouts/auth/column1";
 		$model=new LoginForm;
-
-		// if it is ajax validation request
-		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
 
 		// collect user input data
 		if(isset($_POST['LoginForm']))
@@ -107,4 +123,8 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+        
+        public function actionHash($password) {
+            echo User::model()->hashPassword($password);
+        }
 }

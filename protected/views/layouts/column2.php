@@ -12,8 +12,8 @@
           </a>
         </div>
         <div class="media-body">
-          <h4 class="media-heading">farid <a data-toggle="collapse" data-target="#loguserinfo" class="pull-right"><i class="fa fa-angle-down"></i></a></h4>
-          <span>Peserta</span>
+          <h4 class="media-heading"><?php echo Yii::app()->user->username;?> <a data-toggle="collapse" data-target="#loguserinfo" class="pull-right"><i class="fa fa-angle-down"></i></a></h4>
+          <span><?php echo Yii::app()->user->level;?></span>
         </div>
       </div><!-- leftpanel-profile -->
 
@@ -55,10 +55,12 @@
         <!-- ################# MAIN MENU ################### -->
 
         <div class="tab-pane active" id="mainmenu">
-          <h5 class="sidebar-title">Favorites</h5>
-          <ul class="nav nav-pills nav-stacked nav-quirk">
-            <li class="active"><a href="index.html"><i class="fa fa-home"></i> <span>Soal</span></a></li>
-            <li><a href="widgets.html"><i class="fa fa-cube"></i> <span>Simulasi Entri</span></a></li>
+            <h5 class="sidebar-title">Favorites</h5>
+            <ul class="nav nav-pills nav-stacked nav-quirk">
+                <li class="active"><?php echo CHtml::link('<i class="fa fa-cube"></i> <span>Home</span>', array("question/index"));?></li>
+                <li><?php echo CHtml::link('<i class="fa fa-cube"></i> <span>Daftar Soal</span>', array("question/admin"));?></li>
+                <li><?php echo CHtml::link('<i class="fa fa-cube"></i> <span>Soal</span>', array("question/index"));?></li>
+                <li><a href="widgets.html"><i class="fa fa-cube"></i> <span>Simulasi Entri</span></a></li>
             
           </ul>
         </div><!-- tab-pane -->

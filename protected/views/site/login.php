@@ -1,53 +1,40 @@
-<?php
-/* @var $this SiteController */
-/* @var $model LoginForm */
-/* @var $form CActiveForm  */
+<?php $this->pageTitle=Yii::app()->name . ' - Login';?>
 
-$this->pageTitle=Yii::app()->name . ' - Login';
-$this->breadcrumbs=array(
-	'Login',
-);
-?>
-
-<h1>Login</h1>
-
-<p>Please fill out the following form with your login credentials:</p>
-
-<div class="form">
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'login-form',
-	'enableClientValidation'=>true,
-	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
-	),
-)); ?>
-
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username'); ?>
-		<?php echo $form->error($model,'username'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password'); ?>
-		<?php echo $form->error($model,'password'); ?>
-		<p class="hint">
-			Hint: You may login with <kbd>demo</kbd>/<kbd>demo</kbd> or <kbd>admin</kbd>/<kbd>admin</kbd>.
-		</p>
-	</div>
-
-	<div class="row rememberMe">
-		<?php echo $form->checkBox($model,'rememberMe'); ?>
-		<?php echo $form->label($model,'rememberMe'); ?>
-		<?php echo $form->error($model,'rememberMe'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Login'); ?>
-	</div>
-
-<?php $this->endWidget(); ?>
-</div><!-- form -->
+<div class="sign-overlay"></div>
+  <div class="signpanel"></div>
+    
+  <div class="panel signin">
+      <div style="text-align: center;"><img src="<?php echo Yii::app()->baseUrl;?>/public/images/se2016.png" align="middle"/></div>
+    <div class="panel-heading">
+      <h4 class="panel-title">Tes Rekrutmen Petugas Entri SE2016.</h4>
+    </div>
+    <div class="panel-body">
+        <?php if($model->hasErrors()):?>
+        <div class="panel panel-danger-full">
+        <?php echo CHtml::errorSummary($model, NULL, NULL,array('class'=>'panel-body', 'style'=>'padding:15px;')); ?>
+        </div>
+        <?php endif;?>
+        <?php $form=$this->beginWidget('CActiveForm', array(
+            'id'=>'login-form',
+            'enableAjaxValidation'=>false,
+        )); ?>
+        <div class="form-group mb10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <?php echo $form->textField($model,'username',array('class'=>'form-control', 'placeholder'=>'Enter Username')); ?>
+          </div>
+        </div>
+        <div class="form-group nomargin">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <?php echo CHtml::passwordField(CHtml::activeName($model, 'password'), '', array('class'=>'form-control', 'placeholder'=>'Enter Password')); ?>
+          </div>
+        </div>
+        <div style="margin-top:20px;"></div>
+        <div class="form-group">
+            <button class="btn btn-success btn-quirk btn-block" type="submit">Log In</button>
+        </div>
+      <?php $this->endWidget();?>
+      <hr class="invisible">
+    </div>
+  </div><!-- panel -->
