@@ -8,7 +8,18 @@
               <br />
               <?php echo CHtml::link("Tambah Pertanyaan", array("question/create"), array("class"=>"btn btn-primary"));?>
             <br /><br />
-              <table class="table table-bordered table-primary table-striped nomargin">
+            
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs nav-line">
+                <li class="active"><a href="#popular11" data-toggle="tab"><strong>Soal Versi 1</strong></a></li>
+                <li><a href="#recent11" data-toggle="tab"><strong>Soal Versi 2</strong></a></li>
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div class="tab-pane active" id="popular11">
+                  <table class="table table-bordered table-primary table-striped nomargin">
                   <thead>
                     <tr>
                         <th class="text-center">No</th>
@@ -21,7 +32,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                      <?php $no = 1;?>
+                      <?php $no = (($pages->currentPage)*5)+1;?>
                     <?php foreach($models as $data):?>
                       <tr>
                           <td class="text-center"><?php echo $no++;?></td>
@@ -35,13 +46,22 @@
                       <?php endforeach;?>
                   </tbody>
                 </table>
-            <div style="float:right;">
-            <?php $this->widget('CLinkPager', array(
+                </div>
+                <div class="tab-pane" id="recent11">
+                  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+              </div>
+
+            
+            
+              
+            <!--<div style="float:right;">-->
+            <?php /*$this->widget('CLinkPager', array(
                     'pages' => $pages,
                     'htmlOptions'=>array("class"=>"pagination"),
                     'header'=>''
-                )) ?>
-            </div><div class="clearfix"></div>
+                ))*/ ?>
+            <!--</div><div class="clearfix"></div>-->
             </div>
           </div><!-- panel -->
     </div>
