@@ -10,10 +10,6 @@
     <title>Quirk Responsive Admin Templates</title>
 
     <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl;?>/public/lib/fontawesome/css/font-awesome.css">
-    <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl;?>/public/lib/weather-icons/css/weather-icons.css">
-    <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl;?>/public/lib/jquery-toggles/toggles-full.css">
-    <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl;?>/public/lib/jquery.steps/jquery.steps.css">
-    <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl;?>/public/lib/bootstrap3-wysihtml5-bower/bootstrap3-wysihtml5.css">
     <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl;?>/public/css/quirk.css">
 
     <script src="<?php echo Yii::app()->baseUrl;?>/public/lib/modernizr/modernizr.js"></script>
@@ -69,31 +65,15 @@
 
 </section>
 
-<script src="<?php echo Yii::app()->baseUrl;?>/public/lib/jquery/jquery.js"></script>
-<script src="<?php echo Yii::app()->baseUrl;?>/public/lib/bootstrap/js/bootstrap.js"></script>
-<script src="<?php echo Yii::app()->baseUrl;?>/public/lib/jquery-toggles/toggles.js"></script>
-<script src="<?php echo Yii::app()->baseUrl;?>/public/lib/jquery.steps/jquery.steps.js"></script>
-<script src="<?php echo Yii::app()->baseUrl;?>/public/lib/tinymce/js/tinymce/tinymce.min.js"></script>
-<script src="<?php echo Yii::app()->baseUrl;?>/public/js/quirk.js"></script>
-<script>
 
-$(document).ready(function() {
-    'use strict';
-  $('#wizard-basic').steps({
-    headerTag: 'h3',
-    bodyTag: 'div',
-    transitionEffect: 'slideLeft',
-    autoFocus: true
-  });
-  tinymce.init({ 
-      selector:'textarea',
-      menubar: false,
-      plugins: 'image,code',
-      toolbar1: 'undo redo | bold italic image | alignleft aligncenter alignright alignjustify code',
-      toolbar_items_size: 'small',
-  });
-});
-</script>
+
+
+<?php
+$cs=Yii::app()->getClientScript();
+$cs->registerCoreScript('jquery');
+$cs->registerScriptFile(Yii::app()->request->baseUrl.'/public/lib/bootstrap/js/bootstrap.js',CClientScript::POS_END);
+$cs->registerScriptFile(Yii::app()->request->baseUrl.'/public/js/quirk.js',CClientScript::POS_END);
+?>
 
 </body>
 </html>

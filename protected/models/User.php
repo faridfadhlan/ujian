@@ -122,4 +122,10 @@ class User extends CActiveRecord
 	{
 		return CPasswordHelper::hashPassword($password);
 	}
+        
+        public function hasSoal($id) {
+            $data = UsersAnswers::model()->findAll("user_id=".$id);
+            if(count($data)>0) return true;
+            return false;
+        }
 }

@@ -294,3 +294,915 @@ Stack trace:
 #19 {main}
 REQUEST_URI=/ujian/
 ---
+2016/04/13 03:01:01 [error] [php] Undefined variable: pages (C:\xampp\htdocs\ujian\protected\views\question\admin.php:35)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): QuestionController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): QuestionController->renderPartial()
+#2 C:\xampp\htdocs\ujian\protected\controllers\QuestionController.php(156): QuestionController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): QuestionController->actionAdmin()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): QuestionController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): QuestionController->filterAccessControl()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): QuestionController->runActionWithFilters()
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): QuestionController->run()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=question/admin
+in C:\xampp\htdocs\ujian\protected\views\question\admin.php (35)
+in C:\xampp\htdocs\ujian\protected\controllers\QuestionController.php (156)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 03:09:46 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42883]: Undefined function: 7 ERROR:  operator does not exist: character = integer
+LINE 1: SELECT * FROM "questions" "t" WHERE versi=1
+                                                 ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.. The SQL statement executed was: SELECT * FROM "questions" "t" WHERE versi=1.
+in C:\xampp\htdocs\ujian\protected\controllers\QuestionController.php (151)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 03:09:46 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42883]: Undefined function: 7 ERROR:  operator does not exist: character = integer
+LINE 1: SELECT * FROM "questions" "t" WHERE versi=1
+                                                 ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.. The SQL statement executed was: SELECT * FROM "questions" "t" WHERE versi=1' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1356): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1475): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\ujian\protected\controllers\QuestionController.php(151): CActiveRecord->findAll('versi=1')
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): QuestionController->actionAdmin()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('question/admin')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ujian/index.php?r=question/admin
+HTTP_REFERER=http://localhost/ujian/
+---
+2016/04/13 04:15:12 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42883]: Undefined function: 7 ERROR:  operator does not exist: character = integer
+LINE 1: SELECT * FROM "questions" "t" WHERE versi=2
+                                                 ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.. The SQL statement executed was: SELECT * FROM "questions" "t" WHERE versi=:versi.
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (49)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 04:15:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42883]: Undefined function: 7 ERROR:  operator does not exist: character = integer
+LINE 1: SELECT * FROM "questions" "t" WHERE versi=2
+                                                 ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.. The SQL statement executed was: SELECT * FROM "questions" "t" WHERE versi=:versi' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1356): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1475): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(49): CActiveRecord->findAll('versi=:versi', Array)
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionMulai()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mulai')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/mulai')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/mulai
+---
+2016/04/13 04:23:54 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\ujian\protected\views\ujian\index.php:11)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): UjianController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): UjianController->renderPartial()
+#2 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(50): UjianController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionMulai()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/mulai
+in C:\xampp\htdocs\ujian\protected\views\ujian\index.php (11)
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (50)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 04:34:26 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:54)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/mulai
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (54)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 04:40:28 [error] [php] include(Users.php): failed to open stream: No such file or directory (C:\xampp\htdocs\yii\framework\YiiBase.php:432)
+Stack trace:
+#0 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(51): spl_autoload_call()
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionMulai()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#10 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/mulai
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (51)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:05:28 [error] [php] include(CClient.php): failed to open stream: No such file or directory (C:\xampp\htdocs\yii\framework\YiiBase.php:432)
+Stack trace:
+#0 C:\xampp\htdocs\ujian\protected\views\question\_form.php(84): spl_autoload_call()
+#1 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): QuestionController->renderInternal()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(869): QuestionController->renderFile()
+#4 C:\xampp\htdocs\ujian\protected\views\question\create.php(8): QuestionController->renderPartial()
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): QuestionController->renderInternal()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): QuestionController->renderFile()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(782): QuestionController->renderPartial()
+#9 C:\xampp\htdocs\ujian\protected\controllers\QuestionController.php(79): QuestionController->render()
+#10 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): QuestionController->actionCreate()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): QuestionController->runAction()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#15 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): QuestionController->filterAccessControl()
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(265): QuestionController->runActionWithFilters()
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): QuestionController->run()
+#20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#21 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=question/create
+in C:\xampp\htdocs\ujian\protected\views\question\_form.php (84)
+in C:\xampp\htdocs\ujian\protected\views\question\create.php (8)
+in C:\xampp\htdocs\ujian\protected\controllers\QuestionController.php (79)
+2016/04/13 06:05:33 [error] [php] include(CClient.php): failed to open stream: No such file or directory (C:\xampp\htdocs\yii\framework\YiiBase.php:432)
+Stack trace:
+#0 C:\xampp\htdocs\ujian\protected\views\question\_form.php(84): spl_autoload_call()
+#1 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): QuestionController->renderInternal()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(869): QuestionController->renderFile()
+#4 C:\xampp\htdocs\ujian\protected\views\question\create.php(8): QuestionController->renderPartial()
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): QuestionController->renderInternal()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): QuestionController->renderFile()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(782): QuestionController->renderPartial()
+#9 C:\xampp\htdocs\ujian\protected\controllers\QuestionController.php(79): QuestionController->render()
+#10 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): QuestionController->actionCreate()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): QuestionController->runAction()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#15 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): QuestionController->filterAccessControl()
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(265): QuestionController->runActionWithFilters()
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): QuestionController->run()
+#20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#21 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=question/create
+in C:\xampp\htdocs\ujian\protected\views\question\_form.php (84)
+in C:\xampp\htdocs\ujian\protected\views\question\create.php (8)
+in C:\xampp\htdocs\ujian\protected\controllers\QuestionController.php (79)
+2016/04/13 06:21:32 [error] [exception.CException] exception 'CException' with message 'CWebApplication and its behaviors do not have a method or closure named "cretaeUrl".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\ujian\protected\views\ujian\index.php(93): CComponent->__call('cretaeUrl', Array)
+#1 C:\xampp\htdocs\ujian\protected\views\ujian\index.php(93): CWebApplication->cretaeUrl('ujian/simpan')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#6 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(60): CController->render('index', Array)
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionMulai()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mulai')
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/mulai')
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/mulai
+HTTP_REFERER=http://localhost/ujian/index.php
+---
+2016/04/13 06:22:01 [error] [exception.CException] exception 'CException' with message 'CWebApplication and its behaviors do not have a method or closure named "creataUrl".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\ujian\protected\views\ujian\index.php(93): CComponent->__call('creataUrl', Array)
+#1 C:\xampp\htdocs\ujian\protected\views\ujian\index.php(93): CWebApplication->creataUrl('ujian/simpan')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#6 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(60): CController->render('index', Array)
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionMulai()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mulai')
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/mulai')
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/mulai
+HTTP_REFERER=http://localhost/ujian/index.php
+---
+2016/04/13 06:23:28 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.end" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\base\CModule.php(105): CComponent->__get('end')
+#1 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(65): CModule->__get('end')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionSimpan()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('simpan')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/simpan')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+HTTP_REFERER=http://localhost/ujian/index.php?r=ujian/mulai
+---
+2016/04/13 06:23:31 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.end" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\base\CModule.php(105): CComponent->__get('end')
+#1 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(65): CModule->__get('end')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionSimpan()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('simpan')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/simpan')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+HTTP_REFERER=http://localhost/ujian/index.php?r=ujian/mulai
+---
+2016/04/13 06:23:59 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.end" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\base\CModule.php(105): CComponent->__get('end')
+#1 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(65): CModule->__get('end')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionSimpan()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('simpan')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/simpan')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+HTTP_REFERER=http://localhost/ujian/index.php?r=ujian/mulai
+---
+2016/04/13 06:24:39 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.end" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\base\CModule.php(105): CComponent->__get('end')
+#1 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(65): CModule->__get('end')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionSimpan()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('simpan')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/simpan')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+HTTP_REFERER=http://localhost/ujian/index.php?r=ujian/mulai
+---
+2016/04/13 06:29:05 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.end" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\base\CModule.php(105): CComponent->__get('end')
+#1 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(65): CModule->__get('end')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionSimpan()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('simpan')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/simpan')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+HTTP_REFERER=http://localhost/ujian/index.php?r=ujian/mulai
+---
+2016/04/13 06:29:35 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.end" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\base\CModule.php(105): CComponent->__get('end')
+#1 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(65): CModule->__get('end')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionSimpan()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('simpan')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/simpan')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+HTTP_REFERER=http://localhost/ujian/index.php?r=ujian/mulai
+---
+2016/04/13 06:34:13 [error] [php] Undefined index: q (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:65)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (65)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:34:15 [error] [php] Undefined index: q (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:65)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (65)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:34:42 [error] [php] Undefined index: q (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:65)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (65)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:34:43 [error] [php] Undefined index: q (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:65)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (65)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:34:44 [error] [php] Undefined index: q (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:65)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (65)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:36:09 [error] [php] Undefined index: q (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:66)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (66)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:36:10 [error] [php] Undefined index: q (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:66)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (66)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:36:10 [error] [php] Undefined index: q (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:66)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (66)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:36:11 [error] [php] Undefined index: q (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:66)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (66)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:36:11 [error] [php] Undefined index: q (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:66)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (66)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:36:11 [error] [php] Undefined index: q (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:66)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (66)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:36:11 [error] [php] Undefined index: q (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:66)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (66)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:36:12 [error] [php] Undefined index: q (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:66)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (66)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:36:12 [error] [php] Undefined index: q (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:66)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (66)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:36:13 [error] [php] Undefined index: q (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:66)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (66)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:36:13 [error] [php] Undefined index: q (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:66)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (66)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:36:14 [error] [php] Undefined index: q (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:66)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (66)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:36:15 [error] [php] Undefined index: q (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:66)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (66)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:36:17 [error] [php] Undefined index: q (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:66)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (66)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:36:19 [error] [php] Undefined index: q (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:66)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (66)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:37:10 [error] [php] Undefined index: q (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:66)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (66)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:38:01 [error] [php] Undefined index: q (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:66)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (66)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:38:25 [error] [php] Undefined index: name (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:66)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (66)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:38:35 [error] [php] Undefined index: name (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:66)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (66)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:52:04 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42804]: Datatype mismatch: 7 ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: SELECT * FROM "users_answers" "t" WHERE 1 LIMIT 1
+                                                ^. The SQL statement executed was: SELECT * FROM "users_answers" "t" WHERE 1 LIMIT 1.
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (67)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:52:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42804]: Datatype mismatch: 7 ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: SELECT * FROM "users_answers" "t" WHERE 1 LIMIT 1
+                                                ^. The SQL statement executed was: SELECT * FROM "users_answers" "t" WHERE 1 LIMIT 1' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1356): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1461): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(67): CActiveRecord->find(1)
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionSimpan()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('simpan')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/simpan')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+HTTP_REFERER=http://localhost/ujian/index.php?r=ujian/mulai
+---
+2016/04/13 06:53:47 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42804]: Datatype mismatch: 7 ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: SELECT * FROM "users_answers" "t" WHERE 22 LIMIT 1
+                                                ^. The SQL statement executed was: SELECT * FROM "users_answers" "t" WHERE 22 LIMIT 1.
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (67)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:53:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42804]: Datatype mismatch: 7 ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: SELECT * FROM "users_answers" "t" WHERE 22 LIMIT 1
+                                                ^. The SQL statement executed was: SELECT * FROM "users_answers" "t" WHERE 22 LIMIT 1' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1356): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1461): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(67): CActiveRecord->find(22)
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionSimpan()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('simpan')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/simpan')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+HTTP_REFERER=http://localhost/ujian/index.php?r=ujian/mulai
+---
+2016/04/13 06:54:31 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42804]: Datatype mismatch: 7 ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: SELECT * FROM "users_answers" "t" WHERE 22 LIMIT 1
+                                                ^. The SQL statement executed was: SELECT * FROM "users_answers" "t" WHERE 22 LIMIT 1.
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (67)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:54:31 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42804]: Datatype mismatch: 7 ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: SELECT * FROM "users_answers" "t" WHERE 22 LIMIT 1
+                                                ^. The SQL statement executed was: SELECT * FROM "users_answers" "t" WHERE 22 LIMIT 1' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1356): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1461): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(67): CActiveRecord->find(22)
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionSimpan()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('simpan')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/simpan')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+HTTP_REFERER=http://localhost/ujian/index.php?r=ujian/mulai
+---
+2016/04/13 06:55:25 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42804]: Datatype mismatch: 7 ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: SELECT * FROM "users_answers" "t" WHERE 28 LIMIT 1
+                                                ^. The SQL statement executed was: SELECT * FROM "users_answers" "t" WHERE 28 LIMIT 1.
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (67)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:55:25 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42804]: Datatype mismatch: 7 ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: SELECT * FROM "users_answers" "t" WHERE 28 LIMIT 1
+                                                ^. The SQL statement executed was: SELECT * FROM "users_answers" "t" WHERE 28 LIMIT 1' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1356): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1461): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(67): CActiveRecord->find(28)
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionSimpan()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('simpan')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/simpan')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+HTTP_REFERER=http://localhost/ujian/index.php?r=ujian/mulai
+---
+2016/04/13 06:55:27 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42804]: Datatype mismatch: 7 ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: SELECT * FROM "users_answers" "t" WHERE 28 LIMIT 1
+                                                ^. The SQL statement executed was: SELECT * FROM "users_answers" "t" WHERE 28 LIMIT 1.
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (67)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/13 06:55:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42804]: Datatype mismatch: 7 ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: SELECT * FROM "users_answers" "t" WHERE 28 LIMIT 1
+                                                ^. The SQL statement executed was: SELECT * FROM "users_answers" "t" WHERE 28 LIMIT 1' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1356): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1461): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(67): CActiveRecord->find(28)
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionSimpan()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('simpan')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/simpan')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/simpan
+HTTP_REFERER=http://localhost/ujian/index.php?r=ujian/mulai
+---

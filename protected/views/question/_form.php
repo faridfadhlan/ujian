@@ -49,16 +49,37 @@
             <?php echo $form->error($model,'option_d'); ?>
         </div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'flag_answer'); ?>
-		<?php echo $form->textField($model,'flag_answer',array('size'=>1,'maxlength'=>1)); ?>
-		<?php echo $form->error($model,'flag_answer'); ?>
+	<div class="form-group">
+            <?php echo $form->labelEx($model,'flag_answer'); ?><br/>
+            <?php echo $form->radioButtonList($model, 'flag_answer', array("a"=>"A", "b"=>"B", "c"=>"C", "d"=>"D"), array("separator"=>"&nbsp;&nbsp;&nbsp;&nbsp;"));?>
+            <?php echo $form->error($model,'flag_answer'); ?>
+	</div>
+        
+        <div class="form-group">
+            <?php echo $form->labelEx($model,'versi'); ?><br />
+            <?php echo $form->radioButtonList($model, 'versi', array("1"=>"1", "2"=>"2"), array("separator"=>"&nbsp;&nbsp;&nbsp;&nbsp;"));?>
+            <?php echo $form->error($model,'versi'); ?>
 	</div>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+	<div class="form-group">
+            <button class="btn btn-primary">Simpan</button>
+		<?php //echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+
+<?php
+$cs=Yii::app()->getClientScript();
+$cs->registerScriptFile(Yii::app()->request->baseUrl.'/public/lib/tinymce/js/tinymce/tinymce.min.js',CClientScript::POS_END);
+$cs->registerScript("tinymce", "
+    tinymce.init({ 
+      selector:'textarea',
+      menubar: false,
+      plugins: 'image,code',
+      toolbar1: 'undo redo | bold italic image | alignleft aligncenter alignright alignjustify code',
+      toolbar_items_size: 'small',
+  });
+", CClientScript::POS_END);
+?>

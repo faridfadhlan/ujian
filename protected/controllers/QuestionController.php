@@ -71,7 +71,7 @@ class QuestionController extends Controller
 		{
 			$model->attributes=$_POST['Question'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('create',array(
@@ -95,7 +95,7 @@ class QuestionController extends Controller
 		{
 			$model->attributes=$_POST['Question'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('update',array(
@@ -140,19 +140,21 @@ class QuestionController extends Controller
 			$model->attributes=$_GET['Question'];
                         */
                 //$model = Question::model()->findAll();
-                $criteria=new CDbCriteria();
-                $count=Question::model()->count($criteria);
-                $pages=new CPagination($count);
+                //$criteria=new CDbCriteria();
+                //$count=Question::model()->count($criteria);
+                //$pages=new CPagination($count);
 
                 // results per page
-                $pages->pageSize=5;
+                //$pages->pageSize=5;
                 
-                $pages->applyLimit($criteria);
-                $models=Question::model()->findAll($criteria);
+                //$pages->applyLimit($criteria);
+                $models=Question::model()->findAll("versi='1'");
+                $models2 = Question::model()->findAll("versi='2'");
 
                 $this->render('admin', array(
                     'models' => $models,
-                    'pages' => $pages
+                    'models2' => $models2
+                    //'pages' => $pages
                 ));
                 
 	}

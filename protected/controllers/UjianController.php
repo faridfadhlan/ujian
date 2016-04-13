@@ -27,7 +27,7 @@ class UjianController extends Controller
 	{
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('mulai'),
+				'actions'=>array('mulai','simpan'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -42,8 +42,39 @@ class UjianController extends Controller
         
         public function actionMulai()
         {
-            $model = Question::model()->findAll();
+            $ip = '192.168.1.36';
+            $pecah = explode(".", $ip);
+            $versi = ($pecah[count($pecah)-1]%2)+1;
+            
+            //$model = Question::model()->findAll("versi='".$versi."'");
+            
+            if(Yii::app()->user->level_id == '2' && !User::model()->hasSoal(Yii::app()->user->id)):
+                foreach($model as $data) {
+                    $usersanswers = new UsersAnswers;
+                    $usersanswers->question_id = $data->id;
+                    $usersanswers->user_id = Yii::app()->user->id;
+                    $usersanswers->save();
+                }
+            endif;
+            $model = UsersAnswers::model()->findAll("user_id=".Yii::app()->user->id);
             $this->render('index', compact('model'));
+        }
+        
+        public function actionSimpan() {
+            if(Yii::app()->request->isAjaxRequest){
+                //sleep(2);
+                $jawaban = $_POST['q'];
+                //echo 'sdsd';exit;
+                foreach($jawaban as $key => $value) {
+                    echo $key;
+                    $model = UsersAnswers::model()->findByPk($key);
+                    $model->answer = $value;
+                    $model->save();
+                    echo $model->answer;
+                }
+            }
+                
+            //Yii::app()->end;
         }
 	
 }

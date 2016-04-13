@@ -1,28 +1,26 @@
 <?php
 
 /**
- * This is the model class for table "questions".
+ * This is the model class for table "users_answers".
  *
- * The followings are the available columns in table 'questions':
+ * The followings are the available columns in table 'users_answers':
  * @property integer $id
- * @property string $question
- * @property string $option_a
- * @property string $option_b
- * @property string $option_c
- * @property string $option_d
- * @property string $flag_answer
+ * @property string $question_id
+ * @property string $answer
+ * @property integer $user_id
  *
  * The followings are the available model relations:
- * @property UsersAnswers[] $usersAnswers
+ * @property Users $user
+ * @property Questions $question
  */
-class Question extends CActiveRecord
+class UsersAnswers extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'questions';
+		return 'users_answers';
 	}
 
 	/**
@@ -33,11 +31,13 @@ class Question extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('question, option_a, option_b, option_c, option_d, flag_answer, versi', 'required'),
-			array('flag_answer', 'length', 'max'=>1),
+			array('user_id, question_id', 'required'),
+			array('user_id', 'numerical', 'integerOnly'=>true),
+			array('answer', 'length', 'max'=>1),
+			array('question_id', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, question, option_a, option_b, option_c, option_d, flag_answer, versi', 'safe', 'on'=>'search'),
+			array('id, question_id, answer, user_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -49,7 +49,8 @@ class Question extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'usersAnswers' => array(self::HAS_MANY, 'UsersAnswers', 'question_id'),
+			'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
+			'question' => array(self::BELONGS_TO, 'Question', 'question_id'),
 		);
 	}
 
@@ -60,13 +61,9 @@ class Question extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'question' => 'Question',
-			'option_a' => 'Option A',
-			'option_b' => 'Option B',
-			'option_c' => 'Option C',
-			'option_d' => 'Option D',
-			'flag_answer' => 'Flag Answer',
-                        'versi' => 'Versi',
+			'question_id' => 'Question',
+			'answer' => 'Answer',
+			'user_id' => 'User',
 		);
 	}
 
@@ -89,13 +86,9 @@ class Question extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('question',$this->question,true);
-		$criteria->compare('option_a',$this->option_a,true);
-		$criteria->compare('option_b',$this->option_b,true);
-		$criteria->compare('option_c',$this->option_c,true);
-		$criteria->compare('option_d',$this->option_d,true);
-		$criteria->compare('flag_answer',$this->flag_answer,true);
-                $criteria->compare('versi',$this->versi,true);
+		$criteria->compare('question_id',$this->question_id,true);
+		$criteria->compare('answer',$this->answer,true);
+		$criteria->compare('user_id',$this->user_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -106,7 +99,7 @@ class Question extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Question the static model class
+	 * @return UsersAnswers the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
