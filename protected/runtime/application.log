@@ -1206,3 +1206,184 @@ Stack trace:
 REQUEST_URI=/ujian/index.php?r=ujian/simpan
 HTTP_REFERER=http://localhost/ujian/index.php?r=ujian/mulai
 ---
+2016/04/14 05:54:43 [error] [php] Undefined variable: models (C:\xampp\htdocs\ujian\protected\views\user\admin.php:25)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): UserController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): UserController->renderPartial()
+#2 C:\xampp\htdocs\ujian\protected\controllers\UserController.php(139): UserController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UserController->actionAdmin()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UserController->run()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=user/admin
+in C:\xampp\htdocs\ujian\protected\views\user\admin.php (25)
+in C:\xampp\htdocs\ujian\protected\controllers\UserController.php (139)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/14 06:28:12 [warning] [application] Failed to set unsafe attribute "password_confirmation" of "User".
+in C:\xampp\htdocs\ujian\protected\controllers\UserController.php (72)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/14 06:33:36 [error] [php] Undefined variable: model (C:\xampp\htdocs\ujian\protected\controllers\UjianController.php:52)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/mulai
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (52)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/14 08:49:25 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.action" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\base\CModule.php(105): CComponent->__get('action')
+#1 C:\xampp\htdocs\ujian\protected\views\user\_form.php(41): CModule->__get('action')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\ujian\protected\views\user\update.php(8): CController->renderPartial('_form', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#10 C:\xampp\htdocs\ujian\protected\controllers\UserController.php(104): CController->render('update', Array)
+#11 [internal function]: UserController->actionUpdate('1')
+#12 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#13 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/update')
+#24 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/ujian/index.php?r=user/update&id=1
+HTTP_REFERER=http://localhost/ujian/index.php?r=user/admin
+---
+2016/04/14 10:31:32 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('status')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/status')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/status
+HTTP_REFERER=http://localhost/ujian/index.php?r=ujian/admin
+---
+2016/04/14 10:39:18 [error] [php] Undefined variable: model (C:\xampp\htdocs\ujian\protected\views\ujian\nilai.php:23)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): UjianController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): UjianController->renderPartial()
+#2 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(96): UjianController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionNilai()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/nilai
+in C:\xampp\htdocs\ujian\protected\views\ujian\nilai.php (23)
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (96)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/04/14 10:59:06 [error] [exception.CException] exception 'CException' with message 'CDbCommand and its behaviors do not have a method or closure named "text".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(112): CComponent->__call('text', Array)
+#1 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(112): CDbCommand->text('SELECT \r\n      ...')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionNilai()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('nilai')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/nilai')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/nilai
+HTTP_REFERER=http://localhost/ujian/index.php?r=question/admin
+---
+2016/04/14 11:19:03 [error] [exception.CException] exception 'CException' with message 'CDbCommand and its behaviors do not have a method or closure named "querySclar".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\ujian\protected\views\ujian\nilai.php(24): CComponent->__call('querySclar', Array)
+#1 C:\xampp\htdocs\ujian\protected\views\ujian\nilai.php(24): CDbCommand->querySclar()
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('nilai', Array, true)
+#6 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(116): CController->render('nilai', Array)
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionNilai()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('nilai')
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/nilai')
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/nilai
+HTTP_REFERER=http://localhost/ujian/index.php?r=question/admin
+---
+2016/04/14 11:19:13 [error] [php] Undefined index:  (C:\xampp\htdocs\ujian\protected\views\ujian\nilai.php:32)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): UjianController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): UjianController->renderPartial()
+#2 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(116): UjianController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionNilai()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UjianController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UjianController->filterAccessControl()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): UjianController->runActionWithFilters()
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UjianController->run()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=ujian/nilai
+in C:\xampp\htdocs\ujian\protected\views\ujian\nilai.php (32)
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (116)
+in C:\xampp\htdocs\ujian\index.php (13)

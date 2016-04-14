@@ -20,6 +20,9 @@ class User extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+    
+        public $password_confirmation;
+    
 	public function tableName()
 	{
 		return 'users';
@@ -33,13 +36,14 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('kode, nama, username, password', 'required'),
+			array('kode, nama, username, password, password_confirmation, level_id', 'required', 'on'=>'create'),
+                        array('kode, nama, username, level_id', 'required', 'on'=>'update'),
 			array('level_id', 'numerical', 'integerOnly'=>true),
 			array('kode, username', 'length', 'max'=>20),
 			array('nama', 'length', 'max'=>60),
-			array('password', 'length', 'max'=>50),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
+                        array('username','unique'),
+			array('password', 'length', 'max'=>60),
+                        array('password', 'compare', 'compareAttribute'=>'password_confirmation', 'on'=>'create'),
 			array('id, kode, nama, username, password, level_id', 'safe', 'on'=>'search'),
 		);
 	}
@@ -127,5 +131,12 @@ class User extends CActiveRecord
             $data = UsersAnswers::model()->findAll("user_id=".$id);
             if(count($data)>0) return true;
             return false;
+        }
+        
+        public function beforeSave() {
+            if($this->isNewRecord) {
+                $this->password = $this->hashPassword($this->password);
+            }
+            return parent::beforeSave();
         }
 }

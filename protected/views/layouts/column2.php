@@ -55,17 +55,20 @@
         <!-- ################# MAIN MENU ################### -->
 
         <div class="tab-pane active" id="mainmenu">
-            <h5 class="sidebar-title">Peserta</h5>
             <ul class="nav nav-pills nav-stacked nav-quirk">
                 <li<?php echo (Yii::app()->controller->id=="site" && Yii::app()->controller->action->id=="index")?" class='active'":""; ?>><?php echo CHtml::link('<i class="fa fa-cube"></i> <span>Home</span>', array("site/index"));?></li>
-                
+                <?php if(Yii::app()->user->level_id=='2'):?>
                 <li<?php echo Yii::app()->controller->id=="ujian"?" class='active'":""; ?>><?php echo CHtml::link('<i class="fa fa-cube"></i> <span>Soal</span>', array("ujian/mulai"));?></li>
                 <li><a href="widgets.html"><i class="fa fa-cube"></i> <span>Simulasi Entri</span></a></li>
+                <?php endif;?>
             </ul>
             <?php if(Yii::app()->user->level_id=='1'):?>
             <h5 class="sidebar-title">Administrator</h5>
             <ul class="nav nav-pills nav-stacked nav-quirk">
                 <li<?php echo Yii::app()->controller->id=="question"?" class='active'":""; ?>><?php echo CHtml::link('<i class="fa fa-cube"></i> <span>Daftar Soal</span>', array("question/admin"));?></li>
+                <li<?php echo Yii::app()->controller->id=="user"?" class='active'":""; ?>><?php echo CHtml::link('<i class="fa fa-cube"></i> <span>Daftar Pengguna</span>', array("user/admin"));?></li>
+                <li<?php echo (Yii::app()->controller->action->id=="admin" && Yii::app()->controller->id=='ujian')?" class='active'":""; ?>><?php echo CHtml::link('<i class="fa fa-cube"></i> <span>Ujian</span>', array("ujian/admin"));?></li>
+                <li<?php echo Yii::app()->controller->action->id=="nilai"?" class='active'":""; ?>><?php echo CHtml::link('<i class="fa fa-cube"></i> <span>Daftar Nilai</span>', array("ujian/nilai"));?></li>
             </ul>
             <?php endif;?>
         </div><!-- tab-pane -->

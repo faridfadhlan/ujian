@@ -14539,3 +14539,15 @@ table.soal p{
     margin:0;
     padding:0;
 }
+
+table.description {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border-color: grey;
+}
+
+table.description th{
+    width: 15%;
+}

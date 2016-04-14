@@ -27,7 +27,7 @@
     <div class="headerpanel">
 
     <div class="logopanel">
-        <h2><a href="index.html">Tes Rekrutmen</a></h2>
+        <div style="text-align: center;"><img src="<?php echo Yii::app()->baseUrl;?>/public/images/se2016.png" align="middle" style="width:130px;"/></div>
     </div><!-- logopanel -->
 
     <div class="headerbar">
@@ -45,9 +45,6 @@
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu pull-right">
-                <li><a href="profile.html"><i class="glyphicon glyphicon-user"></i> My Profile</a></li>
-                <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Account Settings</a></li>
-                <li><a href="#"><i class="glyphicon glyphicon-question-sign"></i> Help</a></li>
                 <li><?php echo CHtml::link('<i class="glyphicon glyphicon-log-out"></i> Log Out', array("site/logout"));?></li>
               </ul>
             </div>
