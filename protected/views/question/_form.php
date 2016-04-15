@@ -78,7 +78,7 @@ $cs->registerScript("tinymce", "
       selector:'textarea',
       menubar: false,
       plugins: 'image,code',
-      toolbar1: 'undo redo | bold italic image | alignleft aligncenter alignright alignjustify code',
+      toolbar1: 'undo redo | bold italic image bullist numlist | alignleft aligncenter alignright alignjustify code',
       toolbar_items_size: 'small',
   });
 ", CClientScript::POS_END);

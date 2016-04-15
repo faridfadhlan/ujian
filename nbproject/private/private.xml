@@ -5,17 +5,9 @@
         <group>
             <file>file:/C:/xampp/htdocs/ujian/protected/views/layouts/column2.php</file>
             <file>file:/C:/xampp/htdocs/ujian/protected/views/question/admin.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/views/site/index.php</file>
             <file>file:/C:/xampp/htdocs/ujian/protected/views/question/_form.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/site/login.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/models/User.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/ujian/index.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/user/create.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/ujian/nilai.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/user/_form.php</file>
             <file>file:/C:/xampp/htdocs/ujian/public/css/quirk.css</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/layouts/main.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/ujian/admin.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/user/update.php</file>
             <file>file:/C:/xampp/htdocs/ujian/protected/controllers/UjianController.php</file>
             <file>file:/C:/xampp/htdocs/ujian/protected/controllers/QuestionController.php</file>
         </group>
