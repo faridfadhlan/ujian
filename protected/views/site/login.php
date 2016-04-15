@@ -36,5 +36,6 @@
         </div>
       <?php $this->endWidget();?>
       <hr class="invisible">
+      <p style="text-align: center;color:#A5A5A5;">Copyright &copy; BPS Provinsi Kalimantan Barat</p>
     </div>
   </div><!-- panel -->

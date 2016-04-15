@@ -27,7 +27,7 @@ class UjianController extends Controller
 	{
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('mulai','simpan'),
+				'actions'=>array('mulai','simpan', 'cek'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -42,6 +42,11 @@ class UjianController extends Controller
         
         public function actionMulai()
         {
+            $ujian = Ujian::model()->findByPk(1);
+            if($ujian->status == '0'):
+                $this->render('belum_mulai');
+            else:
+            
             $ip = '192.168.1.36';
             $pecah = explode(".", $ip);
             $versi = ($pecah[count($pecah)-1]%2)+1;
@@ -59,19 +64,19 @@ class UjianController extends Controller
             endif;
             $model = UsersAnswers::model()->findAll("user_id=".Yii::app()->user->id);
             $this->render('index', compact('model'));
+            
+            endif;
         }
         
         public function actionSimpan() {
             if(Yii::app()->request->isAjaxRequest){
-                //sleep(2);
+                sleep(3);
                 $jawaban = $_POST['q'];
-                //echo 'sdsd';exit;
                 foreach($jawaban as $key => $value) {
                     echo $key;
                     $model = UsersAnswers::model()->findByPk($key);
                     $model->answer = $value;
                     $model->save();
-                    echo $model->answer;
                 }
             }
         }
@@ -91,31 +96,41 @@ class UjianController extends Controller
             $this->redirect(array("ujian/admin"));
         }
         
+        public function actionCek() {
+            $ujian = Ujian::model()->findByPk(1);
+            echo $ujian->status;
+        }
+        
         public function actionNilai() {
-            $model = Yii::app()->db->createCommand()
-                        ->setText('SELECT 
-                                    u.id, 
-                                    u.kode, 
-                                    u.nama, 
-                                    u.username, 
-                                    u.level_id,
-                                    q.versi,
-                                    SUM(CASE WHEN ua.answer=q.flag_answer THEN 1 ELSE 0 END) as jum_betul
-                                FROM 
-                                    public.users as u LEFT JOIN public.users_answers as ua ON u.id=ua.user_id LEFT JOIN questions q ON q.id=ua.question_id
-                                WHERE
-                                    u.level_id=2
-                                GROUP BY
-                                    u.id,
-                                    u.kode,
-                                    u.nama,
-                                    u.username,
-                                    u.level_id,q.versi
-                                ORDER BY
-                                    jum_betul DESC
-                                ')
+            $model = Yii::app()->db->createCommand
+                        ('
+                            SELECT 
+                                u.id, 
+                                u.kode, 
+                                u.nama, 
+                                u.username, 
+                                u.level_id,
+                                q.versi,
+                                SUM(CASE WHEN ua.answer=q.flag_answer THEN 1 ELSE 0 END) as jum_betul
+                            FROM 
+                                public.users as u 
+                                LEFT JOIN 
+                                public.users_answers as ua ON u.id=ua.user_id
+                                LEFT JOIN 
+                                questions q ON q.id=ua.question_id
+                            WHERE
+                                u.level_id=2
+                            GROUP BY
+                                u.id,
+                                u.kode,
+                                u.nama,
+                                u.username,
+                                u.level_id,
+                                q.versi
+                            ORDER BY
+                                jum_betul DESC
+                        ')
                         ->queryAll();
-            //print_r($model);exit;
             $this->render('nilai', compact('model'));
         }
 	

@@ -103,9 +103,23 @@ $('#wizard-basic').steps({
   });
 ");
 $cs->registerScript("fungsi", '
-function simpan() {
     
+setInterval(cekujian, 10000);
+setInterval(simpan, 300000);
 
+function cekujian() {
+    $.ajax({
+        type: "POST",
+        url: "'.Yii::app()->createUrl("ujian/cek").'",
+        success: function(data) {
+            if(data=="0"){
+                simpan();
+                location.reload();
+            }
+        },
+    });
+}
+function simpan() {
     $.ajax({
         type: "POST",
         url: "'.Yii::app()->createUrl("ujian/simpan").'",

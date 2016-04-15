@@ -12,6 +12,7 @@
                       <th class="text-center">Nama</th>
                       <th class="text-center">Username</th>
                       <th class="text-center">Versi Soal</th>
+                      <th class="text-center">Jumlah Betul</th>
                       <th class="text-center">Nilai</th>
                     </tr>
                   </thead>
@@ -24,6 +25,7 @@
                           <td><?php echo CHtml::encode($data['nama']);?></td>
                           <td><?php echo $data['username']; ?></td>
                           <td class="text-center"><?php echo $data['versi'];?></td>
+                          <td class="text-center"><?php echo $data['jum_betul'];?></td>
                           <td class="text-center"><?php echo $data['versi']=='1'?  round(($data['jum_betul']/$v1*100), 2):round(($data['jum_betul']/$v2*100), 2);?></td>
                       </tr>
                       <?php endforeach;?>
