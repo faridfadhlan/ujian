@@ -48,6 +48,11 @@
             <?php echo $form->textArea($model,'option_d',array('rows'=>6, 'class'=>'wysiwyg form-control', 'style'=>'width:100%;')); ?>
             <?php echo $form->error($model,'option_d'); ?>
         </div>
+        <div class="form-group">
+            <?php echo $form->labelEx($model,'option_e'); ?>
+            <?php echo $form->textArea($model,'option_e',array('rows'=>6, 'class'=>'wysiwyg form-control', 'style'=>'width:100%;')); ?>
+            <?php echo $form->error($model,'option_e'); ?>
+        </div>
 
 	<div class="form-group">
             <?php echo $form->labelEx($model,'flag_answer'); ?><br/>

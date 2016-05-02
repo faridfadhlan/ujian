@@ -33,11 +33,11 @@ class Question extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('question, option_a, option_b, option_c, option_d, flag_answer, versi', 'required'),
+			array('question, option_a, option_b, option_c, option_d, option_e, flag_answer, versi', 'required'),
 			array('flag_answer', 'length', 'max'=>1),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, question, option_a, option_b, option_c, option_d, flag_answer, versi', 'safe', 'on'=>'search'),
+			array('id, question, option_a, option_b, option_c, option_d, option_e, flag_answer, versi', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -65,6 +65,7 @@ class Question extends CActiveRecord
 			'option_b' => 'Option B',
 			'option_c' => 'Option C',
 			'option_d' => 'Option D',
+                        'option_e' => 'Option E',
 			'flag_answer' => 'Flag Answer',
                         'versi' => 'Versi',
 		);
@@ -94,6 +95,7 @@ class Question extends CActiveRecord
 		$criteria->compare('option_b',$this->option_b,true);
 		$criteria->compare('option_c',$this->option_c,true);
 		$criteria->compare('option_d',$this->option_d,true);
+                $criteria->compare('option_e',$this->option_e,true);
 		$criteria->compare('flag_answer',$this->flag_answer,true);
                 $criteria->compare('versi',$this->versi,true);
 

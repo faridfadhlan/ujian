@@ -47,6 +47,13 @@
                                     <td class="jawaban"> d.</td>
                                     <td><?php echo $data->question->option_d;?></td>
                                 </tr>
+                                <?php if($data->question->optien_e != NULL):?>
+                                <tr>
+                                    <td class="jawaban"><input type="radio" name="q[<?php echo $data->id;?>]" value="e" <?php echo $data->answer=='e'?'checked':'';?> /></td>
+                                    <td class="jawaban"> e.</td>
+                                    <td><?php echo $data->question->option_e;?></td>
+                                </tr>
+                                <?php endif;?>
                             </table>
                         </td>
                     </tr>

@@ -28,6 +28,7 @@
                       <th class="text-center">Option 2</th>
                       <th class="text-center">Option 3</th>
                       <th class="text-center">Option 4</th>
+                      <th class="text-center">Option 5</th>
                       <th class="text-center">Action</th>
                     </tr>
                   </thead>
@@ -41,6 +42,7 @@
                           <td<?php echo $data->flag_answer=='b'?' style="background-color:#ABEDA5"':''; ?>><?php echo CHtml::encode($data->option_b);?></td>
                           <td<?php echo $data->flag_answer=='c'?' style="background-color:#ABEDA5"':''; ?>><?php echo CHtml::encode($data->option_c);?></td>
                           <td<?php echo $data->flag_answer=='d'?' style="background-color:#ABEDA5"':''; ?>><?php echo CHtml::encode($data->option_d);?></td>
+                          <td<?php echo $data->flag_answer=='e'?' style="background-color:#ABEDA5"':''; ?>><?php echo CHtml::encode($data->option_e);?></td>
                           <td class="text-center"><?php echo CHtml::link("", array("question/update", "id"=>$data->id), array("class"=>"fa fa-edit"));?>&nbsp;<a class="fa fa-trash-o" href="#"></a></td>
                       </tr>
                       <?php endforeach;?>
@@ -57,6 +59,7 @@
                       <th class="text-center">Option 2</th>
                       <th class="text-center">Option 3</th>
                       <th class="text-center">Option 4</th>
+                      <th class="text-center">Option 5</th>
                       <th class="text-center">Action</th>
                     </tr>
                   </thead>
@@ -70,6 +73,7 @@
                           <td<?php echo $data->flag_answer=='b'?' style="background-color:#ABEDA5"':''; ?>><?php echo CHtml::encode($data->option_b);?></td>
                           <td<?php echo $data->flag_answer=='c'?' style="background-color:#ABEDA5"':''; ?>><?php echo CHtml::encode($data->option_c);?></td>
                           <td<?php echo $data->flag_answer=='d'?' style="background-color:#ABEDA5"':''; ?>><?php echo CHtml::encode($data->option_d);?></td>
+                          <td<?php echo $data->flag_answer=='e'?' style="background-color:#ABEDA5"':''; ?>><?php echo CHtml::encode($data->option_e);?></td>
                           <td class="text-center"><?php echo CHtml::link("", array("question/update", "id"=>$data->id), array("class"=>"fa fa-edit"));?>&nbsp;<a class="fa fa-trash-o" href="#"></a></td>
                       </tr>
                       <?php endforeach;?>
