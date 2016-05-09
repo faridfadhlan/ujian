@@ -31,7 +31,7 @@ class UjianController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin', 'status', 'nilai'),
+				'actions'=>array('admin', 'status', 'nilai', 'detil_nilai'),
 				'expression'=>array('Controller', 'harus_admin'),
 			),
 			array('deny',  // deny all users
@@ -54,7 +54,10 @@ class UjianController extends Controller
             //$model = Question::model()->findAll("versi='".$versi."'");
             
             if(Yii::app()->user->level_id == '2' && !User::model()->hasSoal(Yii::app()->user->id)):
-                $model = Question::model()->findAll("versi='".$versi."'");
+                $criteria = new CDbCriteria();
+                $criteria->condition = "versi='".$versi."'";
+                $criteria->order = "jenis_pertanyaan ASC";
+                $model = Question::model()->findAll($criteria);
                 foreach($model as $data) {
                     $usersanswers = new UsersAnswers;
                     $usersanswers->question_id = $data->id;
@@ -62,8 +65,16 @@ class UjianController extends Controller
                     $usersanswers->save();
                 }
             endif;
-            $model = UsersAnswers::model()->findAll("user_id=".Yii::app()->user->id);
-            $this->render('index', compact('model'));
+            
+            $models = array();
+            
+            for($i=0;$i<4;$i++) {
+                $criteria = new CDbCriteria();
+                $criteria->join = "INNER JOIN questions ON t.question_id=questions.id";
+                $criteria->condition = "questions.jenis_pertanyaan=".($i+1)." AND user_id=".Yii::app()->user->id;
+                $models[$i] = UsersAnswers::model()->findAll($criteria);
+            }
+            $this->render('index', compact('models'));
             
             endif;
         }
@@ -132,6 +143,44 @@ class UjianController extends Controller
                         ')
                         ->queryAll();
             $this->render('nilai', compact('model'));
+        }
+        
+        public function actionDetil_nilai($id) {
+            $model = Yii::app()->db->createCommand
+                        ("
+                            SELECT 
+                                b.question, 
+                                b.flag_answer,
+                                c.answer,
+                                CASE 
+                                    WHEN b.flag_answer='a' THEN b.option_a
+                                    WHEN b.flag_answer='b' THEN b.option_b
+                                    WHEN b.flag_answer='c' THEN b.option_c
+                                    WHEN b.flag_answer='d' THEN b.option_d
+                                    WHEN b.flag_answer='e' THEN b.option_e
+                                    ELSE 'Other'
+                                END as jawaban_benar,
+                                CASE 
+                                    WHEN c.answer='a' THEN b.option_a
+                                    WHEN c.answer='b' THEN b.option_b
+                                    WHEN c.answer='c' THEN b.option_c
+                                    WHEN c.answer='d' THEN b.option_d
+                                    WHEN c.answer='e' THEN b.option_e
+                                    ELSE 'Other'
+                                END as jawaban_peserta
+                              FROM 
+                                users_answers c, 
+                                users a, 
+                                questions b
+                              WHERE 
+                                c.user_id = ".$id." AND
+                                c.question_id = b.id AND
+                                c.user_id = a.id                              
+                              ORDER BY
+                                b.id
+                        ")
+                        ->queryAll();
+            $this->render('detil_nilai', compact('model'));
         }
 	
 }

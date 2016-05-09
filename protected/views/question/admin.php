@@ -33,16 +33,22 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <?php $no = 1;?>
+                    <?php $no = 1;$before = NULL; $teks = array("Deret Angka dan Huruf", "Padanan Kata", "Penalaran Silogisme", "Deret Gambar");?>
                     <?php foreach($models as $data):?>
+                      <?php if($data->jenis_pertanyaan != $before):?>
+                      <tr>
+                          <td colspan="8"><b><?php echo strtoupper($teks[$data->jenis_pertanyaan-1]);?></b></td>
+                      </tr>
+                      <?php endif;?>
+                      <?php $before = $data->jenis_pertanyaan;?>
                       <tr>
                           <td class="text-center"><?php echo $no++;?></td>
-                          <td><?php echo CHtml::encode($data->question);?></td>
-                          <td<?php echo $data->flag_answer=='a'?' style="background-color:#ABEDA5"':''; ?>><?php echo CHtml::encode($data->option_a);?></td>
-                          <td<?php echo $data->flag_answer=='b'?' style="background-color:#ABEDA5"':''; ?>><?php echo CHtml::encode($data->option_b);?></td>
-                          <td<?php echo $data->flag_answer=='c'?' style="background-color:#ABEDA5"':''; ?>><?php echo CHtml::encode($data->option_c);?></td>
-                          <td<?php echo $data->flag_answer=='d'?' style="background-color:#ABEDA5"':''; ?>><?php echo CHtml::encode($data->option_d);?></td>
-                          <td<?php echo $data->flag_answer=='e'?' style="background-color:#ABEDA5"':''; ?>><?php echo CHtml::encode($data->option_e);?></td>
+                          <td><?php echo $data->question;?></td>
+                          <td<?php echo $data->flag_answer=='a'?' style="background-color:#ABEDA5"':''; ?>><?php echo $data->option_a;?></td>
+                          <td<?php echo $data->flag_answer=='b'?' style="background-color:#ABEDA5"':''; ?>><?php echo $data->option_b;?></td>
+                          <td<?php echo $data->flag_answer=='c'?' style="background-color:#ABEDA5"':''; ?>><?php echo $data->option_c;?></td>
+                          <td<?php echo $data->flag_answer=='d'?' style="background-color:#ABEDA5"':''; ?>><?php echo $data->option_d;?></td>
+                          <td<?php echo $data->flag_answer=='e'?' style="background-color:#ABEDA5"':''; ?>><?php echo $data->option_e;?></td>
                           <td class="text-center"><?php echo CHtml::link("", array("question/update", "id"=>$data->id), array("class"=>"fa fa-edit"));?>&nbsp;<a class="fa fa-trash-o" href="#"></a></td>
                       </tr>
                       <?php endforeach;?>

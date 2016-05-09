@@ -148,8 +148,17 @@ class QuestionController extends Controller
                 //$pages->pageSize=5;
                 
                 //$pages->applyLimit($criteria);
-                $models=Question::model()->findAll("versi='1'");
-                $models2 = Question::model()->findAll("versi='2'");
+            
+                $criteria1 = new CDbCriteria();
+                $criteria1->condition = "versi='1'";
+                $criteria1->order = "jenis_pertanyaan, id ASC";
+                
+                $criteria2 = new CDbCriteria();
+                $criteria2->condition = "versi='2'";
+                $criteria2->order = "jenis_pertanyaan, id ASC";
+            
+                $models=Question::model()->findAll($criteria1);
+                $models2 = Question::model()->findAll($criteria2);
 
                 $this->render('admin', array(
                     'models' => $models,

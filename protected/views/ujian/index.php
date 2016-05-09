@@ -6,6 +6,10 @@
             <?php 
             $no = 0;
             $hal = 0;
+            $total = count($models[0])+count($models[1])+count($models[2])+count($models[3]);
+            
+            foreach($models as $model):
+            
             shuffle($model);
             ?>
             <?php foreach($model as $data):?>
@@ -25,8 +29,8 @@
                     <tr>
                         <td></td>
                         <td>
+                            <?php if($data->question->jenis_pertanyaan != '4'):?>
                             <table class="soal">
-                                
                                 <tr>
                                     <td class="jawaban"><input type="radio" name="q[<?php echo $data->id;?>]" value="a" <?php echo $data->answer=='a'?'checked':'';?> /></td>
                                     <td class="jawaban"> a.</td>
@@ -47,7 +51,7 @@
                                     <td class="jawaban"> d.</td>
                                     <td><?php echo $data->question->option_d;?></td>
                                 </tr>
-                                <?php if($data->question->optien_e != NULL):?>
+                                <?php if($data->question->option_e != NULL):?>
                                 <tr>
                                     <td class="jawaban"><input type="radio" name="q[<?php echo $data->id;?>]" value="e" <?php echo $data->answer=='e'?'checked':'';?> /></td>
                                     <td class="jawaban"> e.</td>
@@ -55,13 +59,29 @@
                                 </tr>
                                 <?php endif;?>
                             </table>
+                            <?php else:?>
+                            <table class="soal">
+                                <tr>
+                                    <td class="gambar"><?php echo $data->question->option_a;?></td>
+                                    <td class="gambar"><?php echo $data->question->option_b;?></td>
+                                    <td class="gambar"><?php echo $data->question->option_c;?></td>
+                                    <td class="gambar"><?php echo $data->question->option_d;?></td>
+                                </tr>
+                                <tr>
+                                    <td class="jawaban gambar"><input style="display:inline;" type="radio" name="q[<?php echo $data->id;?>]" value="a" <?php echo $data->answer=='a'?'checked':'';?> />&nbsp;A</td>
+                                    <td class="jawaban gambar"><input style="display:inline;" type="radio" name="q[<?php echo $data->id;?>]" value="b" <?php echo $data->answer=='b'?'checked':'';?> />&nbsp;B</td>
+                                    <td class="jawaban gambar"><input style="display:inline;" type="radio" name="q[<?php echo $data->id;?>]" value="c" <?php echo $data->answer=='c'?'checked':'';?> />&nbsp;C</td>
+                                    <td class="jawaban gambar"><input style="display:inline;" type="radio" name="q[<?php echo $data->id;?>]" value="d" <?php echo $data->answer=='d'?'checked':'';?> />&nbsp;D</td>
+                                </tr>
+                            </table>
+                            <?php endif;?>
                         </td>
                     </tr>
                     <tr><td>&nbsp;</td></tr>
-                <?php if($no%5==0 || $no==count($model)):?>
+                <?php if($no%5==0 || $no==$total):?>
                 </table>
             </div>
-            <?php endif;endforeach;?>
+            <?php endif;endforeach;endforeach;?>
           </div>
         
     </form>

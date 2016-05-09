@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <!--<link rel="shortcut icon" href="../images/favicon.png" type="image/png">-->
 
-    <title>Quirk Responsive Admin Templates</title>
+    <title><?php echo CHtml::encode($this->pageTitle);?></title>
 
     <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl;?>/public/lib/fontawesome/css/font-awesome.css">
     <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl;?>/public/css/quirk.css">

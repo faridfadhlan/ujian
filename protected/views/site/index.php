@@ -14,6 +14,18 @@
                 <li>Metode Pendataan Karakteristik Usaha Mikro. Pencacahan dilakukan secara sampel berdasarkan frame hasil listing SE2016</li>
                 <li>Metode Pendataan karakteristik Usaha Menenengah Besar. Dilakukan secara sensus untuk Seluruh usaha/perusahaan dengan skala usaha menengah dan besar</li>
                 </ol>
+                <p><strong>Bagaimana Metode Pendataan Sensus Ekonomi 2016?</strong></p>
+                <ol>
+                <li>Metode listing usaha/Perusahaan. Pencacahan dilakukan di seluruh wilayah NKRI, mencakup seluruh usaha ekonomi.</li>
+                <li>Metode Pendataan Karakteristik Usaha Mikro. Pencacahan dilakukan secara sampel berdasarkan frame hasil listing SE2016</li>
+                <li>Metode Pendataan karakteristik Usaha Menenengah Besar. Dilakukan secara sensus untuk Seluruh usaha/perusahaan dengan skala usaha menengah dan besar</li>
+                </ol>
+                <p><strong>Bagaimana Metode Pendataan Sensus Ekonomi 2016?</strong></p>
+                <ol>
+                <li>Metode listing usaha/Perusahaan. Pencacahan dilakukan di seluruh wilayah NKRI, mencakup seluruh usaha ekonomi.</li>
+                <li>Metode Pendataan Karakteristik Usaha Mikro. Pencacahan dilakukan secara sampel berdasarkan frame hasil listing SE2016</li>
+                <li>Metode Pendataan karakteristik Usaha Menenengah Besar. Dilakukan secara sensus untuk Seluruh usaha/perusahaan dengan skala usaha menengah dan besar</li>
+                </ol>
                 
               <br />
               <?php if(Yii::app()->user->level_id=='2'):?>

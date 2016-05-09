@@ -53,10 +53,16 @@
             <?php echo $form->textArea($model,'option_e',array('rows'=>6, 'class'=>'wysiwyg form-control', 'style'=>'width:100%;')); ?>
             <?php echo $form->error($model,'option_e'); ?>
         </div>
+        
+        <div class="form-group">
+            <?php echo $form->labelEx($model,'jenis_pertanyaan'); ?><br/>
+            <?php echo $form->radioButtonList($model, 'jenis_pertanyaan', array("1"=>"Deret Angka dan Huruf", "2"=>"Padanan Kata", "3"=>"Penalaran Silogisme", "4"=>"Deret Gambar"), array("separator"=>"<br />"));?>
+            <?php echo $form->error($model,'jenis_pertanyaan'); ?>
+	</div>
 
 	<div class="form-group">
             <?php echo $form->labelEx($model,'flag_answer'); ?><br/>
-            <?php echo $form->radioButtonList($model, 'flag_answer', array("a"=>"A", "b"=>"B", "c"=>"C", "d"=>"D"), array("separator"=>"&nbsp;&nbsp;&nbsp;&nbsp;"));?>
+            <?php echo $form->radioButtonList($model, 'flag_answer', array("a"=>"A", "b"=>"B", "c"=>"C", "d"=>"D", "e"=>"E"), array("separator"=>"&nbsp;&nbsp;&nbsp;&nbsp;"));?>
             <?php echo $form->error($model,'flag_answer'); ?>
 	</div>
         

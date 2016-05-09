@@ -1387,3 +1387,427 @@ REQUEST_URI=/ujian/index.php?r=ujian/nilai
 in C:\xampp\htdocs\ujian\protected\views\ujian\nilai.php (32)
 in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (116)
 in C:\xampp\htdocs\ujian\index.php (13)
+2016/05/03 04:51:16 [error] [exception.CException] exception 'CException' with message 'Property "Question.optien_e" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('optien_e')
+#1 C:\xampp\htdocs\ujian\protected\views\ujian\index.php(50): CActiveRecord->__get('optien_e')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#6 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(66): CController->render('index', Array)
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionMulai()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mulai')
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/mulai')
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/mulai
+HTTP_REFERER=http://localhost/ujian/index.php
+---
+2016/05/03 05:26:15 [warning] [application] Failed to set unsafe attribute "option_e" of "Question".
+in C:\xampp\htdocs\ujian\protected\controllers\QuestionController.php (72)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/05/03 05:35:23 [error] [exception.CException] exception 'CException' with message 'Property "UsersAnswers.jenis_pertanyaan" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('jenis_pertanyaa...')
+#1 C:\xampp\htdocs\ujian\protected\views\ujian\index.php(28): CActiveRecord->__get('jenis_pertanyaa...')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#6 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(66): CController->render('index', Array)
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionMulai()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mulai')
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/mulai')
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/mulai
+---
+2016/05/04 05:15:49 [error] [exception.CException] exception 'CException' with message 'UjianController and its behaviors do not have a method or closure named "beforeFind".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1576): CComponent->__call('beforeFind', Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1576): UjianController->beforeFind()
+#2 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(71): CActiveRecord->findAllBySql('SELECT a.* FROM...')
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionMulai()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mulai')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/mulai')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/mulai
+---
+2016/05/04 05:16:36 [error] [exception.CException] exception 'CException' with message 'UjianController and its behaviors do not have a method or closure named "beforeFind".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1576): CComponent->__call('beforeFind', Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1576): UjianController->beforeFind()
+#2 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(71): CActiveRecord->findAllBySql('SELECT a.* FROM...')
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionMulai()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mulai')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/mulai')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/mulai
+---
+2016/05/04 05:26:20 [error] [exception.CException] exception 'CException' with message 'UjianController and its behaviors do not have a method or closure named "getCommandBuilder".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1474): CComponent->__call('getCommandBuild...', Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1474): UjianController->getCommandBuilder()
+#2 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(75): CActiveRecord->findAll(Object(CDbCriteria))
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionMulai()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mulai')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/mulai')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/mulai
+---
+2016/05/04 05:26:21 [error] [exception.CException] exception 'CException' with message 'UjianController and its behaviors do not have a method or closure named "getCommandBuilder".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1474): CComponent->__call('getCommandBuild...', Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1474): UjianController->getCommandBuilder()
+#2 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(75): CActiveRecord->findAll(Object(CDbCriteria))
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionMulai()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mulai')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/mulai')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/mulai
+---
+2016/05/04 05:28:05 [error] [exception.CException] exception 'CException' with message 'UjianController and its behaviors do not have a method or closure named "getCommandBuilder".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1474): CComponent->__call('getCommandBuild...', Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1474): UjianController->getCommandBuilder()
+#2 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(75): CActiveRecord->findAll(Object(CDbCriteria))
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionMulai()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mulai')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/mulai')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/mulai
+---
+2016/05/04 05:28:06 [error] [exception.CException] exception 'CException' with message 'UjianController and its behaviors do not have a method or closure named "getCommandBuilder".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1474): CComponent->__call('getCommandBuild...', Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1474): UjianController->getCommandBuilder()
+#2 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(75): CActiveRecord->findAll(Object(CDbCriteria))
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionMulai()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mulai')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/mulai')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/mulai
+---
+2016/05/04 05:29:58 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42P01]: Undefined table: 7 ERROR:  invalid reference to FROM-clause entry for table "users_answers"
+LINE 1: ... FROM "users_answers" "t" INNER JOIN questions ON users_answ...
+                                                             ^
+HINT:  Perhaps you meant to reference the table alias "t".. The SQL statement executed was: SELECT "t"."id", "t"."question_id", "t"."answer", "t"."user_id" FROM "users_answers" "t" INNER JOIN questions ON users_answers.question_id=questions.id WHERE questions.jenis_pertanyaan=1 AND user_id=4.
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (75)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/05/04 05:29:58 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42P01]: Undefined table: 7 ERROR:  invalid reference to FROM-clause entry for table "users_answers"
+LINE 1: ... FROM "users_answers" "t" INNER JOIN questions ON users_answ...
+                                                             ^
+HINT:  Perhaps you meant to reference the table alias "t".. The SQL statement executed was: SELECT "t"."id", "t"."question_id", "t"."answer", "t"."user_id" FROM "users_answers" "t" INNER JOIN questions ON users_answers.question_id=questions.id WHERE questions.jenis_pertanyaan=1 AND user_id=4' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1356): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1475): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(75): CActiveRecord->findAll(Object(CDbCriteria))
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UjianController->actionMulai()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mulai')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/mulai')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/mulai
+---
+2016/05/04 05:39:19 [warning] [application] Failed to set unsafe attribute "option_e" of "Question".
+in C:\xampp\htdocs\ujian\protected\controllers\QuestionController.php (72)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/05/04 05:40:50 [warning] [application] Failed to set unsafe attribute "option_e" of "Question".
+in C:\xampp\htdocs\ujian\protected\controllers\QuestionController.php (72)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/05/04 05:55:11 [warning] [application] Failed to set unsafe attribute "option_e" of "Question".
+in C:\xampp\htdocs\ujian\protected\controllers\QuestionController.php (72)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/05/04 05:56:07 [warning] [application] Failed to set unsafe attribute "option_e" of "Question".
+in C:\xampp\htdocs\ujian\protected\controllers\QuestionController.php (72)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/05/04 05:56:56 [warning] [application] Failed to set unsafe attribute "option_e" of "Question".
+in C:\xampp\htdocs\ujian\protected\controllers\QuestionController.php (72)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/05/04 06:02:51 [warning] [application] Failed to set unsafe attribute "option_e" of "Question".
+in C:\xampp\htdocs\ujian\protected\controllers\QuestionController.php (72)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/05/04 06:03:33 [warning] [application] Failed to set unsafe attribute "option_e" of "Question".
+in C:\xampp\htdocs\ujian\protected\controllers\QuestionController.php (72)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/05/04 06:04:16 [warning] [application] Failed to set unsafe attribute "option_e" of "Question".
+in C:\xampp\htdocs\ujian\protected\controllers\QuestionController.php (72)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/05/04 06:04:55 [warning] [application] Failed to set unsafe attribute "option_e" of "Question".
+in C:\xampp\htdocs\ujian\protected\controllers\QuestionController.php (72)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/05/04 06:34:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "detil_nilai".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('detil_nilai')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('detil_nilai')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/detil_nil...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/detil_nilai&id=4
+HTTP_REFERER=http://localhost/ujian/index.php?r=ujian/nilai
+---
+2016/05/04 06:34:56 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "c"
+LINE 12:                                 c.question_id = b.id
+                                         ^. The SQL statement executed was: 
+                            SELECT 
+                                b.question, 
+                                b.flag_answer, 
+                                c.answer
+                              FROM 
+                                users_answers c, 
+                                users a, 
+                                questions b
+                              WHERE 
+                                c.user_id = 4
+                                c.question_id = b.id
+                              ORDER BY
+                                b.id
+                        .
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (165)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/05/04 06:34:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "c"
+LINE 12:                                 c.question_id = b.id
+                                         ^. The SQL statement executed was: 
+                            SELECT 
+                                b.question, 
+                                b.flag_answer, 
+                                c.answer
+                              FROM 
+                                users_answers c, 
+                                users a, 
+                                questions b
+                              WHERE 
+                                c.user_id = 4
+                                c.question_id = b.id
+                              ORDER BY
+                                b.id
+                        ' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(165): CDbCommand->queryAll()
+#2 [internal function]: UjianController->actionDetil_nilai('4')
+#3 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(UjianController), Array)
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UjianController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('detil_nilai')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/detil_nil...')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/detil_nilai&id=4
+HTTP_REFERER=http://localhost/ujian/index.php?r=ujian/nilai
+---
+2016/05/04 06:46:18 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "ORDER"
+LINE 28:                               ORDER BY
+                                       ^. The SQL statement executed was: 
+                            SELECT 
+                                b.question, 
+                                CASE 
+                                    WHEN b.flag_answer='a' THEN b.option_a
+                                    WHEN b.flag_answer='b' THEN b.option_b
+                                    WHEN b.flag_answer='c' THEN b.option_c
+                                    WHEN b.flag_answer='d' THEN b.option_d
+                                    WHEN b.flag_answer='e' THEN b.option_e
+                                    ELSE 'Other'
+                                END as jawaban_benar,
+                                CASE 
+                                    WHEN c.answer='a' THEN b.option_a
+                                    WHEN c.answer='b' THEN b.option_b
+                                    WHEN c.answer='c' THEN b.option_c
+                                    WHEN c.answer='d' THEN b.option_d
+                                    WHEN c.answer='e' THEN b.option_e
+                                    ELSE 'Other'
+                                END as jawaban_peserta
+                              FROM 
+                                users_answers c, 
+                                users a, 
+                                questions b
+                              WHERE 
+                                c.user_id = 4 AND
+                                c.question_id = b.id AND
+                                c.user_id = a.id AND                                
+                              ORDER BY
+                                b.id
+                        .
+in C:\xampp\htdocs\ujian\protected\controllers\UjianController.php (180)
+in C:\xampp\htdocs\ujian\index.php (13)
+2016/05/04 06:46:18 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "ORDER"
+LINE 28:                               ORDER BY
+                                       ^. The SQL statement executed was: 
+                            SELECT 
+                                b.question, 
+                                CASE 
+                                    WHEN b.flag_answer='a' THEN b.option_a
+                                    WHEN b.flag_answer='b' THEN b.option_b
+                                    WHEN b.flag_answer='c' THEN b.option_c
+                                    WHEN b.flag_answer='d' THEN b.option_d
+                                    WHEN b.flag_answer='e' THEN b.option_e
+                                    ELSE 'Other'
+                                END as jawaban_benar,
+                                CASE 
+                                    WHEN c.answer='a' THEN b.option_a
+                                    WHEN c.answer='b' THEN b.option_b
+                                    WHEN c.answer='c' THEN b.option_c
+                                    WHEN c.answer='d' THEN b.option_d
+                                    WHEN c.answer='e' THEN b.option_e
+                                    ELSE 'Other'
+                                END as jawaban_peserta
+                              FROM 
+                                users_answers c, 
+                                users a, 
+                                questions b
+                              WHERE 
+                                c.user_id = 4 AND
+                                c.question_id = b.id AND
+                                c.user_id = a.id AND                                
+                              ORDER BY
+                                b.id
+                        ' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\ujian\protected\controllers\UjianController.php(180): CDbCommand->queryAll()
+#2 [internal function]: UjianController->actionDetil_nilai('4')
+#3 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(UjianController), Array)
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UjianController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('detil_nilai')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ujian/detil_nil...')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\ujian\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ujian/index.php?r=ujian/detil_nilai&id=4
+HTTP_REFERER=http://localhost/ujian/index.php?r=ujian/nilai
+---
+2016/05/04 06:54:17 [error] [php] Undefined variable: pageTitle (C:\xampp\htdocs\ujian\protected\views\layouts\auth\main.php:10)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#2 C:\xampp\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(214): CContentDecorator->run()
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(308): SiteController->endWidget()
+#5 C:\xampp\htdocs\ujian\protected\views\layouts\auth\column1.php(3): SiteController->endContent()
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(784): SiteController->renderFile()
+#9 C:\xampp\htdocs\ujian\protected\controllers\SiteController.php(115): SiteController->render()
+#10 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): SiteController->runAction()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#15 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SiteController->filterAccessControl()
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#21 C:\xampp\htdocs\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\ujian\index.php(13): CWebApplication->run()
+REQUEST_URI=/ujian/index.php?r=site/login
+in C:\xampp\htdocs\ujian\protected\views\layouts\auth\main.php (10)
+in C:\xampp\htdocs\ujian\protected\views\layouts\auth\column1.php (3)
+in C:\xampp\htdocs\ujian\protected\controllers\SiteController.php (115)

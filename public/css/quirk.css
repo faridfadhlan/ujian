@@ -14528,7 +14528,9 @@ table.soal td{
 }
 
 table.soal td.depan {
+    
     padding-right:10px;
+    vertical-align: top;
 }
 
 table.soal td.jawaban {
@@ -14539,6 +14541,15 @@ table.soal p{
     margin:0;
     padding:0;
 }
+input.inline{
+    display:inline;
+}
+
+td.gambar {
+    text-align: center; /* center checkbox horizontally */
+    vertical-align: middle; /* center checkbox vertically */
+}
+
 
 table.description {
     margin-bottom: 20px;

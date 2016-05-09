@@ -22,7 +22,7 @@
                     <?php foreach($model as $data):?>
                       <tr>
                           <td class="text-center"><?php echo CHtml::encode($data['kode']);?></td>
-                          <td><?php echo CHtml::encode($data['nama']);?></td>
+                          <td><?php echo CHtml::link($data['nama'], array("ujian/detil_nilai", "id"=>$data['id']));?></td>
                           <td><?php echo $data['username']; ?></td>
                           <td class="text-center"><?php echo $data['versi'];?></td>
                           <td class="text-center"><?php echo $data['jum_betul'];?></td>
