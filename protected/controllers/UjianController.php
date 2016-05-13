@@ -81,10 +81,10 @@ class UjianController extends Controller
         
         public function actionSimpan() {
             if(Yii::app()->request->isAjaxRequest){
-                sleep(3);
+                //sleep(1);
                 $jawaban = $_POST['q'];
                 foreach($jawaban as $key => $value) {
-                    echo $key;
+                    //echo $key;
                     $model = UsersAnswers::model()->findByPk($key);
                     $model->answer = $value;
                     $model->save();

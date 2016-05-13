@@ -15,8 +15,10 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
+
+
 html {
-  font-family: sans-serif;
+  /*font-family: sans-serif;*/
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -114,7 +116,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace;
+  /*font-family: monospace, monospace;*/
   font-size: 1em;
 }
 button,
@@ -1082,7 +1084,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
   font-size: 12px;
   line-height: 1.42857143;
   color: #696c74;
@@ -7422,7 +7424,7 @@ fieldset[disabled] .btn-info.active {
   font-weight: 700;
   color: #313745;
   letter-spacing: .2px;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
+  
 }
 .panel-body {
   border-bottom-right-radius: 2px;
@@ -14562,3 +14564,26 @@ table.description {
 table.description th{
     width: 15%;
 }
+
+.judul {
+    float:left;
+    margin-top:20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color:#fff;
+    font-family: "Segoe UI";
+}
+
+.timer {
+    margin-bottom:20px;
+    padding: 0px;
+    font-size: 50px;
+    font-weight: bold;
+    color:#227099;
+}
+
+*,.panel-title h4 {
+    font-family: "Segoe UI";
+}
+

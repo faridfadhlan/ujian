@@ -31,12 +31,15 @@
     </div><!-- logopanel -->
 
     <div class="headerbar">
+        
 
       <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
 
-
+      <div class="judul">Tes Rekrutmen Petugas Pengolahan SE2016 BPS Provinsi Kalimantan Barat</div>
       <div class="header-right">
+          
         <ul class="headermenu">
+          
           <li>
             <div class="btn-group">
               <button type="button" class="btn btn-logged" data-toggle="dropdown">
@@ -69,7 +72,6 @@
 $cs=Yii::app()->getClientScript();
 $cs->registerCoreScript('jquery');
 $cs->registerScriptFile(Yii::app()->request->baseUrl.'/public/lib/bootstrap/js/bootstrap.js',CClientScript::POS_END);
-$cs->registerScriptFile(Yii::app()->request->baseUrl.'/public/js/quirk.js',CClientScript::POS_END);
 ?>
 
 </body>

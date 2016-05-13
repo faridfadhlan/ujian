@@ -133,6 +133,12 @@ class User extends CActiveRecord
             return false;
         }
         
+        public function hasEntri($id) {
+            $data = UsersEntries::model()->findAll("user_id=".$id);
+            if(count($data)>0) return true;
+            return false;
+        }
+        
         public function beforeSave() {
             if($this->isNewRecord) {
                 $this->password = $this->hashPassword($this->password);
