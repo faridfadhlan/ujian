@@ -17,7 +17,7 @@ class SiteController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to access 'index' and 'view' actions.
-				'actions'=>array('login', 'hash'),
+				'actions'=>array('login', 'hash', 'generate'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated users to access all actions

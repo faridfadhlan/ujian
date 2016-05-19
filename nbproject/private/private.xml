@@ -4,14 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/ujian/protected/views/layouts/column2.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/controllers/SiteController.php</file>
             <file>file:/C:/xampp/htdocs/ujian/protected/controllers/EntriController.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/question/_form.php</file>
             <file>file:/C:/xampp/htdocs/ujian/protected/views/entri/ujianentri.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/public/css/quirk.css</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/layouts/main.php</file>
             <file>file:/C:/xampp/htdocs/ujian/protected/models/User.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/models/UsersEntries.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/ujian/index.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/views/ujian/admin.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/views/entri/belum_mulai.php</file>
             <file>file:/C:/xampp/htdocs/ujian/protected/controllers/UjianController.php</file>
             <file>file:/C:/xampp/htdocs/ujian/protected/models/EntriTimer.php</file>
         </group>

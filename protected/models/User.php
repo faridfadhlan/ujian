@@ -139,6 +139,18 @@ class User extends CActiveRecord
             return false;
         }
         
+        public function isBuka($user_id) {
+            $timer = EntriTimer::model()->find("user_id=:user_id", array(":user_id"=>$user_id));
+            
+            if($timer != NULL && $timer->waktu_selesai != NULL) {
+                $durasi = time() - strtotime($timer->waktu_mulai);
+                if($durasi > 600) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        
         public function beforeSave() {
             if($this->isNewRecord) {
                 $this->password = $this->hashPassword($this->password);

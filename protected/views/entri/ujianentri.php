@@ -9,10 +9,11 @@
                     <div class="panel-heading">
                       <h4 class="panel-title" style="text-align: center;">WAKTU TERSISA</h4>
                     </div>
-                    <div class="panel-body inverse">
+                    <div class="panel-body inverse" style="padding:5px;">
                       <div class="row mb10">
                           <h1 class="today-day" style="text-align: center;font-weight:bold;"></h1>
                       </div>
+                        <p style="text-align: center;text-transform: uppercase;">PERHATIAN : Jika membuka halaman yang lain, timer terus berjalan.</p>
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -72,7 +73,7 @@ function cekujian() {
 }
 
 function confirm_simpan() {
-    var answer = confirm ("Jika sebelumnya pernah menyimpan, durasi pengerjaan akan diubah berdasarkan waktu sekarang ?");
+    var answer = confirm ("Semakin cepat mengentri, poin Anda semakin besar. Jika sebelumnya pernah menyimpan, durasi pengerjaan akan diubah berdasarkan waktu sekarang. Setuju?");
     if (answer){
         simpan();
     }
@@ -109,11 +110,10 @@ function startTimer(duration, display) {
 
         if (--timer < 0) {
             clearInterval(tes);
-            simpan();
+            location.reload();
         }
     }, 1000);
 }
-
 
 ', CClientScript::POS_END);
 

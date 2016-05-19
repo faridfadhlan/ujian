@@ -29,7 +29,7 @@
             <ul class="nav nav-pills nav-stacked nav-quirk">
                 <li<?php echo (Yii::app()->controller->id=="site" && Yii::app()->controller->action->id=="index")?" class='active'":""; ?>><?php echo CHtml::link('<i class="fa fa-cube"></i> <span>Home</span>', array("site/index"));?></li>
                 <?php if(Yii::app()->user->level_id=='2'):?>
-                <li<?php echo Yii::app()->controller->id=="ujian"?" class='active'":""; ?>><?php echo CHtml::link('<i class="fa fa-cube"></i> <span>Soal</span>', array("ujian/mulai"));?></li>
+                <li<?php echo Yii::app()->controller->id=="ujian"?" class='active'":""; ?>><?php echo CHtml::link('<i class="fa fa-cube"></i> <span>Ujian Tertulis</span>', array("ujian/mulai"));?></li>
                 <li<?php echo Yii::app()->controller->id=="entri"?" class='active'":""; ?>><?php echo CHtml::link('<i class="fa fa-cube"></i> <span>Ujian Entri</span>', array("entri/ujianentri"));?></li>
                 <?php endif;?>
             </ul>

@@ -94,16 +94,31 @@ class UjianController extends Controller
         
         public function actionAdmin() {
             $ujian = Ujian::model()->findByPk(1);
-            $this->render('admin', compact('ujian'));
+            $entri = Ujian::model()->findByPk(3);
+            $this->render('admin', compact('ujian','entri'));
         }
         
-        public function actionStatus() {
-            $ujian = Ujian::model()->findByPk(1);
-            if($ujian->status == '0')
-                $ujian->status = '1';
-            else
-                $ujian->status = '0';
-            $ujian->save();
+        public function actionStatus($jenis) {
+            
+            if($jenis == 1) {
+                $ujian = Ujian::model()->findByPk(1);
+                if($ujian->status == '0')
+                    $ujian->status = '1';
+                else {
+                    $ujian->status = '0';
+                    EntriTimer::model()->saveAll();
+                }
+                $ujian->save();
+            }
+            
+            if($jenis == 2) {
+                $entri = Ujian::model()->findByPk(3);
+                if($entri->status == '0')
+                    $entri->status = '1';
+                else
+                    $entri->status = '0';
+                $entri->save();
+            }
             $this->redirect(array("ujian/admin"));
         }
         

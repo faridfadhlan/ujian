@@ -177,11 +177,15 @@ class EntriController extends Controller
         
         public function actionUjianentri() {
             $ujian = Ujian::model()->findByPk(3);
-            if($ujian->status == '0'):
+            if($ujian->status == '0' || !User::model()->isBuka(Yii::app()->user->id)):
                 $this->render('belum_mulai');
             else:
+                
             
-            if(Yii::app()->user->level_id == '2' && !User::model()->hasEntri(Yii::app()->user->id)):
+            if  (
+                    Yii::app()->user->level_id == '2' && 
+                    !User::model()->hasEntri(Yii::app()->user->id)
+                ):
                 $model = Entri::model()->findAll();
                 foreach($model as $data) {
                     $usersentries = new UsersEntries;
@@ -192,15 +196,14 @@ class EntriController extends Controller
                 
                 $timer = new EntriTimer;
                 $timer->user_id = Yii::app()->user->id;
-                $timer->waktu_mulai = date("H:i:s",time());
-                $timer->save();
+                $timer->waktu_mulai = date("H:i:s");
+                $timer->save(false);
+                
             endif;
             
             $mulai = EntriTimer::model()->find("user_id=:user_id", array(":user_id"=>Yii::app()->user->id));
-            //print_r($mulai->waktu_mulai);exit;
-            $a = new DateTime($mulai->waktu_mulai);
-            $b = new DateTime('now');
-            $durasi = $b->getTimestamp() - $a->getTimestamp();
+            
+            $durasi = time() - strtotime($mulai->waktu_mulai);
             
             $soals = UsersEntries::model()->findAll("user_id=:user_id", array(":user_id"=>Yii::app()->user->id));
             $this->render("ujianentri", compact('soals', 'durasi'));
