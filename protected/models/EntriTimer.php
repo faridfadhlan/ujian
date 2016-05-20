@@ -105,7 +105,7 @@ class EntriTimer extends CActiveRecord
         public function saveAll() {
             $timers = self::model()->findAll("waktu_selesai IS NULL");
             foreach($timers as $timer) {
-                $timer->waktu_selesai = date("H:i:s");
+                $timer->waktu_selesai = date("h:i:s", strtotime($timer->waktu_mulai) + 600);
                 $timer->save();
             }
         }

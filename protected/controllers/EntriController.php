@@ -32,7 +32,7 @@ class EntriController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','ujianentri','simpan'),
+				'actions'=>array('create','update','ujianentri','simpan','pernahsimpan'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -175,9 +175,25 @@ class EntriController extends Controller
 		}
 	}
         
+        public function actionPernahsimpan() {
+            if(Yii::app()->request->isAjaxRequest) {
+                $timer = EntriTimer::model()->find("user_id=:user_id", array(":user_id"=>Yii::app()->user->id));
+                if($timer != NULL) {
+                    if($timer->waktu_selesai != NULL) echo "sudah";
+                    else {
+                        echo "belum";
+                    }
+                }
+                else {
+                    echo "belum";
+                }
+            }
+        }
+        
         public function actionUjianentri() {
+            $max = 600;
             $ujian = Ujian::model()->findByPk(3);
-            if($ujian->status == '0' || !User::model()->isBuka(Yii::app()->user->id)):
+            if($ujian->status == '0' || !User::model()->isBuka(Yii::app()->user->id, $max)):
                 $this->render('belum_mulai');
             else:
                 
@@ -203,7 +219,7 @@ class EntriController extends Controller
             
             $mulai = EntriTimer::model()->find("user_id=:user_id", array(":user_id"=>Yii::app()->user->id));
             
-            $durasi = time() - strtotime($mulai->waktu_mulai);
+            $durasi = $max - (time() - strtotime($mulai->waktu_mulai));
             
             $soals = UsersEntries::model()->findAll("user_id=:user_id", array(":user_id"=>Yii::app()->user->id));
             $this->render("ujianentri", compact('soals', 'durasi'));

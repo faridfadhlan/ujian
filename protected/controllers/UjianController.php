@@ -106,7 +106,7 @@ class UjianController extends Controller
                     $ujian->status = '1';
                 else {
                     $ujian->status = '0';
-                    EntriTimer::model()->saveAll();
+                    
                 }
                 $ujian->save();
             }
@@ -115,8 +115,10 @@ class UjianController extends Controller
                 $entri = Ujian::model()->findByPk(3);
                 if($entri->status == '0')
                     $entri->status = '1';
-                else
+                else {
                     $entri->status = '0';
+                    EntriTimer::model()->saveAll();
+                }
                 $entri->save();
             }
             $this->redirect(array("ujian/admin"));

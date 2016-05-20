@@ -82,6 +82,19 @@ function confirm_simpan() {
     }
 }
 
+function ceksimpan() {
+    $.ajax({
+        type: "POST",
+        url: "'.Yii::app()->createUrl("entri/pernahsimpan").'",
+        success: function(data) {
+            if(data == "belum"){
+                simpan();
+            }
+            else location.reload();
+        }
+    });
+}
+
 function simpan() {
     $.ajax({
         type: "POST",
@@ -91,8 +104,8 @@ function simpan() {
             $(".modal").modal("show"); 
         },
         success: function(data) {
-            //alert(data);
             $(".modal").modal("hide"); 
+            location.reload();
         }
     });
 }
@@ -110,7 +123,7 @@ function startTimer(duration, display) {
 
         if (--timer < 0) {
             clearInterval(tes);
-            location.reload();
+            ceksimpan();
         }
     }, 1000);
 }
@@ -118,7 +131,7 @@ function startTimer(duration, display) {
 ', CClientScript::POS_END);
 
 $cs->registerScript("ready", '
-    var durasi = 600-'.$durasi.', display = $(".today-day");
+    var durasi = '.$durasi.', display = $(".today-day");
     startTimer(durasi, display);
 ');
 ?>

@@ -139,12 +139,12 @@ class User extends CActiveRecord
             return false;
         }
         
-        public function isBuka($user_id) {
+        public function isBuka($user_id, $max) {
             $timer = EntriTimer::model()->find("user_id=:user_id", array(":user_id"=>$user_id));
             
-            if($timer != NULL && $timer->waktu_selesai != NULL) {
+            if($timer != NULL) {
                 $durasi = time() - strtotime($timer->waktu_mulai);
-                if($durasi > 600) {
+                if($durasi > $max || $durasi < 0) {
                     return false;
                 }
             }
