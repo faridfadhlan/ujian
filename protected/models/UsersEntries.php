@@ -61,7 +61,7 @@ class UsersEntries extends CActiveRecord
 			'id' => 'ID',
 			'entri_id' => 'Entri',
 			'user_id' => 'User',
-			'entri' => 'Entri',
+			//'b4k2' => 'Entri',
 		);
 	}
 

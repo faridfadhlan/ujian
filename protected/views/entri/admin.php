@@ -14,7 +14,9 @@
                   <thead>
                     <tr>
                         <th class="text-center">ID</th>
-                      <th class="text-center">Teks</th>
+                        <th class="text-center">B4K2</th>
+                        <th class="text-center">B4K3</th>
+                        <th class="text-center">B4K5</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -22,7 +24,9 @@
                         <?php foreach($dataProvider as $data):?>
                         <tr>
                             <td class="text-center" width="10%"><?php echo CHtml::encode($data->id);?></td>
-                            <td><?php echo $data->teks;?></td>
+                            <td><?php echo $data->b4k2;?></td>
+                            <td><?php echo $data->b4k3;?></td>
+                            <td><?php echo $data->b4k5;?></td>
                         </tr>
                       <?php endforeach;?>
                         <?php else:?>

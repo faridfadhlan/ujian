@@ -36,7 +36,7 @@ class UserController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','import'),
 				'expression'=>array('Controller', 'harus_admin'),
 			),
 			array('deny',  // deny all users
@@ -169,4 +169,14 @@ class UserController extends Controller
 			Yii::app()->end();
 		}
 	}
+        
+        public function actionImport() {
+            $model = new ImportExcelForm;
+            if(isset($_POST['ImportExcelForm'])) {
+                $model->attributes = $_POST['ImportExcelForm'];
+                if($model->validate())
+                    Yii::app()->user->setFlash('success', $model->jumlah_import. " data berhasil diimport!");
+            }
+            $this->render('import', array('model'=>$model));
+        }
 }

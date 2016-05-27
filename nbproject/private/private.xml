@@ -6,12 +6,24 @@
             <file>file:/C:/xampp/htdocs/ujian/protected/views/layouts/column2.php</file>
             <file>file:/C:/xampp/htdocs/ujian/protected/controllers/SiteController.php</file>
             <file>file:/C:/xampp/htdocs/ujian/protected/controllers/EntriController.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/entri/ujianentri.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/models/ImportExcelForm.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/models/Entri.php</file>
             <file>file:/C:/xampp/htdocs/ujian/protected/models/User.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/ujian/admin.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/views/entri/_form.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/controllers/UserController.php</file>
             <file>file:/C:/xampp/htdocs/ujian/protected/views/entri/belum_mulai.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/controllers/UjianController.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/views/user/create.php</file>
             <file>file:/C:/xampp/htdocs/ujian/protected/models/EntriTimer.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/views/entri/admin.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/views/entri/ujianentri.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/views/user/admin.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/views/user/_form.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/config/main.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/views/entri/create.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/views/ujian/admin.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/views/user/import.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/models/UsersEntries.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/controllers/UjianController.php</file>
         </group>
     </open-files>
 </project-private>

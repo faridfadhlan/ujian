@@ -44,6 +44,7 @@ class User extends CActiveRecord
                         array('username','unique'),
 			array('password', 'length', 'max'=>60),
                         array('password', 'compare', 'compareAttribute'=>'password_confirmation', 'on'=>'create'),
+                        array('alamat, jk, umur, pendidikan', 'safe'),
 			array('id, kode, nama, username, password, level_id', 'safe', 'on'=>'search'),
 		);
 	}

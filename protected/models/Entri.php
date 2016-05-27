@@ -28,10 +28,10 @@ class Entri extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('teks', 'required'),
+			array('b4k2, b4k3, b4k5', 'required'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, teks', 'safe', 'on'=>'search'),
+			array('id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -54,7 +54,9 @@ class Entri extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'teks' => 'Teks',
+			'b4k2' => 'B4K2',
+                        'b4k3' => 'B4K3',
+                        'b4k5' => 'B4K5',
 		);
 	}
 
@@ -77,7 +79,7 @@ class Entri extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('teks',$this->teks,true);
+		//$criteria->compare('teks',$this->teks,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

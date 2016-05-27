@@ -31,7 +31,7 @@ class EntriTimer extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('user_id', 'numerical', 'integerOnly'=>true),
-			array('waktu_mulai, waktu_selesai', 'safe'),
+			array('waktu_mulai, waktu_selesai, prev_answer', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, user_id, waktu_mulai, waktu_selesai', 'safe', 'on'=>'search'),
@@ -60,6 +60,7 @@ class EntriTimer extends CActiveRecord
 			'user_id' => 'User',
 			'waktu_mulai' => 'Waktu Mulai',
 			'waktu_selesai' => 'Waktu Selesai',
+                        'prev_answer' => 'Prev Answer',
 		);
 	}
 

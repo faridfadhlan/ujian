@@ -36,6 +36,7 @@
                 <?php echo $form->labelEx($model,'username'); ?>
                 <?php echo $form->textField($model,'username',array('class'=>'form-control')); ?>
             </div>
+            
         </div>
         <div class="col-md-6">
             <?php if(Yii::app()->controller->action->id=='create'):?>

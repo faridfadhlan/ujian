@@ -18,17 +18,31 @@
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
-        
-        <div class="form-group">
-            <?php echo $form->labelEx($model,'teks'); ?>
-            <?php echo $form->textArea($model,'teks',array('rows'=>6, 'class'=>'form-control')); ?>
-            <?php echo $form->error($model,'question'); ?>
+        <div class="col-md-4">
+            <div class="form-group">
+                <?php echo $form->labelEx($model,'b4k2'); ?>
+                <?php echo $form->textField($model,'b4k2',array('class'=>'form-control')); ?>
+            </div>
         </div>
-
+        <div class="col-md-4">
+            <div class="form-group">
+                <?php echo $form->labelEx($model,'b4k3'); ?>
+                <?php echo $form->textField($model,'b4k3',array('class'=>'form-control')); ?>
+            </div>
+        </div>    
+        </div>
+        <div class="col-md-4">    
+            <div class="form-group">
+                <?php echo $form->labelEx($model,'b4k5'); ?>
+                <?php echo $form->textField($model,'b4k5',array('class'=>'form-control')); ?>
+            </div>
+        </div>   
+        <div class="col-md-12"> 
 	<div class="form-group">
             <button class="btn btn-primary">Simpan</button>
 		<?php //echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
+        </div>
 
 <?php $this->endWidget(); ?>
 

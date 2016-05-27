@@ -2,6 +2,9 @@
     <div class="col-md-12 col-lg-12 dash-left">
           <div class="panel panel-primary">
               <ul class="panel-options">
+             <li>
+                  <?php echo CHtml::link('<i class="fa fa-upload"></i>', array("user/import"));?>
+             </li>
               <li>
                   <?php echo CHtml::link('<i class="glyphicon glyphicon-plus"></i>', array("user/create"));?>
              </li>
