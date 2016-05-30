@@ -14587,3 +14587,7 @@ table.description th{
     font-family: "Segoe UI";
 }
 
+.entri {
+    text-transform: uppercase;
+}
+

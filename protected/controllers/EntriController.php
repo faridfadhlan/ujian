@@ -36,7 +36,7 @@ class EntriController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','import'),
 				'expression'=>array('Controller', 'harus_admin'),
 			),
 			array('deny',  // deny all users
@@ -191,7 +191,7 @@ class EntriController extends Controller
         }
         
         public function actionUjianentri() {
-            $max = 600;
+            $max = 100000;
             $ujian = Ujian::model()->findByPk(3);
             if($ujian->status == '0' || !User::model()->isBuka(Yii::app()->user->id, $max)):
                 $this->render('belum_mulai');
@@ -221,7 +221,11 @@ class EntriController extends Controller
             
             $durasi = $max - (time() - strtotime($mulai->waktu_mulai));
             
-            $soals = UsersEntries::model()->findAll("user_id=:user_id", array(":user_id"=>Yii::app()->user->id));
+            $criteria = new CDbCriteria;
+            $criteria->condition = 'user_id='.Yii::app()->user->id;
+            $criteria->order = 'id ASC';
+            
+            $soals = UsersEntries::model()->findAll($criteria);
             $this->render("ujianentri", compact('soals', 'durasi'));
             endif;
         }
@@ -229,17 +233,28 @@ class EntriController extends Controller
         public function actionSimpan() {
             if(Yii::app()->request->isAjaxRequest){
                 //sleep(1);
-                $jawaban = $_POST['q'];
-                //print_r($jawaban);exit;
+                $q = $_POST['q'];
                 
-                foreach($jawaban as $key => $value) {
+                foreach($q as $key => $value) {
                     $model = UsersEntries::model()->findByPk($key);
-                    $model->entri = $value;
+                    $model->b4k2 = $value['b4k2']==''?NULL:strtoupper(trim_spasi($value['b4k2']));
+                    $model->b4k3 = $value['b4k3']==''?NULL:strtoupper(trim_spasi($value['b4k3']));
+                    $model->b4k5 = $value['b4k5']==''?NULL:strtoupper(trim_spasi($value['b4k5']));
                     $model->save();
                 }
                 $timer = EntriTimer::model()->find("user_id=:user_id", array(":user_id"=>Yii::app()->user->id));
                 $timer->waktu_selesai = date("H:i:s",time());
                 $timer->save();
             }
+        }
+        
+        public function actionImport() {
+            $model = new ImportEntriForm;
+            if(isset($_POST['ImportEntriForm'])) {
+                $model->attributes = $_POST['ImportEntriForm'];
+                if($model->validate())
+                    Yii::app()->user->setFlash('success', $model->jumlah_import. " data berhasil diimport!");
+            }
+            $this->render('import', array('model'=>$model));
         }
 }

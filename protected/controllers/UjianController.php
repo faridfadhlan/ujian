@@ -31,7 +31,7 @@ class UjianController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin', 'status', 'nilai', 'detil_nilai'),
+				'actions'=>array('admin', 'status', 'nilai', 'detil_nilai', 'detil_entri'),
 				'expression'=>array('Controller', 'harus_admin'),
 			),
 			array('deny',  // deny all users
@@ -138,25 +138,42 @@ class UjianController extends Controller
                                 u.nama, 
                                 u.username, 
                                 u.level_id,
-                                q.versi,
-                                SUM(CASE WHEN ua.answer=q.flag_answer THEN 1 ELSE 0 END) as jum_betul
+                                y.jum_betul,
+                                x.jum_entribetul
                             FROM 
                                 public.users as u 
                                 LEFT JOIN 
-                                public.users_answers as ua ON u.id=ua.user_id
-                                LEFT JOIN 
-                                questions q ON q.id=ua.question_id
+                                (
+                                    SELECT 
+                                        u.id,
+                                        SUM(CASE WHEN ua.answer=q.flag_answer THEN 1 ELSE 0 END) as jum_betul
+                                    FROM
+                                        users as u,
+                                        users_answers as ua,
+                                        questions as q
+                                    WHERE
+                                        u.id = ua.user_id AND ua.question_id=q.id
+                                    GROUP BY
+                                        u.id
+                                ) as y ON y.id=u.id
+                                LEFT JOIN
+                                (
+                                    SELECT 
+                                        u.id,
+                                        SUM(CASE WHEN ue.b4k2=e.b4k2 THEN 1 ELSE 0 END + CASE WHEN ue.b4k3=e.b4k3 THEN 1 ELSE 0 END + CASE WHEN ue.b4k5=e.b4k5 THEN 1 ELSE 0 END) as jum_entribetul
+                                    FROM
+                                        users as u,
+                                        users_entries as ue,
+                                        entri as e
+                                    WHERE
+                                        u.id = ue.user_id AND ue.entri_id=e.id
+                                    GROUP BY
+                                        u.id
+                                ) as x ON x.id=u.id
                             WHERE
                                 u.level_id=2
-                            GROUP BY
-                                u.id,
-                                u.kode,
-                                u.nama,
-                                u.username,
-                                u.level_id,
-                                q.versi
                             ORDER BY
-                                jum_betul DESC
+                                jum_betul, jum_entribetul DESC
                         ')
                         ->queryAll();
             $this->render('nilai', compact('model'));
@@ -198,6 +215,28 @@ class UjianController extends Controller
                         ")
                         ->queryAll();
             $this->render('detil_nilai', compact('model'));
+        }
+        
+        public function actionDetil_entri($id) {
+            $model = Yii::app()->db->createCommand
+                        ("
+                            SELECT 
+                                e.b4k2,
+                                ue.b4k2 as s_b4k2,
+                                e.b4k3,
+                                ue.b4k3 as s_b4k3,
+                                e.b4k5,
+                                ue.b4k5 as s_b4k5
+                            FROM 
+                                users u, 
+                                users_entries ue, 
+                                entri e
+                            WHERE 
+                                ue.entri_id = e.id AND
+                                ue.user_id = u.id AND u.id=".$id."
+                        ")
+                        ->queryAll();
+            $this->render('detil_entri', compact('model'));
         }
 	
 }

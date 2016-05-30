@@ -2,6 +2,9 @@
     <div class="col-md-12 col-lg-12 dash-left">
           <div class="panel panel-primary">
               <ul class="panel-options">
+                  <li>
+                  <?php echo CHtml::link('<i class="fa fa-upload"></i>', array("entri/import"));?>
+             </li>
               <li>
                   <?php echo CHtml::link('<i class="glyphicon glyphicon-plus"></i>', array("entri/create"));?>
              </li>
@@ -21,13 +24,16 @@
                   </thead>
                   <tbody>
                         <?php if(count($dataProvider)>0):?>
+                        <?php $no = 1;?>
                         <?php foreach($dataProvider as $data):?>
                         <tr>
-                            <td class="text-center" width="10%"><?php echo CHtml::encode($data->id);?></td>
+                            <td class="text-center" width="6%"><?php echo $no;?></td>
                             <td><?php echo $data->b4k2;?></td>
                             <td><?php echo $data->b4k3;?></td>
                             <td><?php echo $data->b4k5;?></td>
                         </tr>
+                        
+                        <?php $no++;?>
                       <?php endforeach;?>
                         <?php else:?>
                         <tr>

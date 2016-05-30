@@ -13,19 +13,38 @@
                       <div class="row mb10">
                           <h1 class="today-day" style="text-align: center;font-weight:bold;"></h1>
                       </div>
-                        <p style="text-align: center;text-transform: uppercase;">PERHATIAN : Jika membuka halaman yang lain, timer terus berjalan.</p>
+                        <p style="text-align: center;text-transform: uppercase;">PERHATIAN : Jika membuka halaman yang lain, timer terus berjalan. Simpan dulu sebelum membuka halaman lain.<br /><span style="color:yellow;">Tekan (Enter) untuk menyimpan. Tekan (TAB) untuk pindah isian.</span></p>
                     </div>
                 </div>
                 <div class="clearfix"></div>
                 <div class="form">
                     <form id="form_entri">
                     <?php foreach($soals as $soal):?>
-                    <div class="form-group">
-                        <?php echo CHtml::label($soal->entrinya->teks, NULL); ?>
-                        <?php echo CHtml::textField('q['.$soal->id.']', $soal->entri, array('class'=>'form-control')); ?>                        
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <?php echo CHtml::label($soal->entrinya->b4k2, NULL); ?>
+                            <?php echo CHtml::textField('q['.$soal->id.'][b4k2]', $soal->b4k2, array('class'=>'form-control entri')); ?>                        
+                        </div>
                     </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <?php echo CHtml::label($soal->entrinya->b4k3, NULL); ?>
+                            <?php echo CHtml::textField('q['.$soal->id.'][b4k3]', $soal->b4k3, array('class'=>'form-control entri')); ?>                        
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <?php echo CHtml::label($soal->entrinya->b4k5, NULL); ?>
+                            <?php echo CHtml::textField('q['.$soal->id.'][b4k5]', $soal->b4k5, array('class'=>'form-control entri')); ?>                        
+                        </div>
+                    </div>
+                        <div class="clearfix"></div>
+                        <hr>
                     <?php endforeach;?>
-                    <?php echo CHtml::htmlButton("Simpan", array("onClick"=>"confirm_simpan()", "class"=>"btn btn-primary"));?>
+                    <?php 
+                    //echo CHtml::submitButton("Simpan", array("class"=>"btn btn-primary"));
+                    echo CHtml::htmlButton("Simpan", array("onClick"=>"confirm_simpan()", "class"=>"btn btn-primary"));
+                    ?>
                     </form>
                 </div>
             </div>
@@ -104,6 +123,7 @@ function simpan() {
             $(".modal").modal("show"); 
         },
         success: function(data) {
+            //alert(data);
             $(".modal").modal("hide"); 
             location.reload();
         }
@@ -133,5 +153,10 @@ function startTimer(duration, display) {
 $cs->registerScript("ready", '
     var durasi = '.$durasi.', display = $(".today-day");
     startTimer(durasi, display);
+    $("input.entri").keypress(function(e) {
+        if (e.which == 13) {
+            confirm_simpan();
+        }
+    });
 ');
 ?>

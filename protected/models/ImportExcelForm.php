@@ -41,13 +41,21 @@ class ImportExcelForm extends CFormModel
                 $nama_kolom = array(
                     'kode',
                     'nama',
+                    'username',
+                    'password',
                     'alamat',
                     'jk',
                     'pendidikan',
+                    'jurusan',
                     'umur',
-                    'username',
-                    'level',
-                    'password'
+                    'nohp',
+                    'ttl',
+                    'status_kawin',
+                    'pekerjaan',
+                    'pengalaman',
+                    'shift',
+                    'rekomendasi',
+                    'level'
                 );
                 
                 for($i=0;$i<count($nama_kolom);$i++) {
@@ -66,7 +74,6 @@ class ImportExcelForm extends CFormModel
         }
         
         public function import_all($attribute) {
-            $jk = array('L'=>'1', 'P'=>'2');
             $error = FALSE;
             //print_r($this->data_file_excel->sheets[0]['numRows']);
             if($this->data_file_excel->sheets[0]['numRows']<2) {
@@ -79,13 +86,23 @@ class ImportExcelForm extends CFormModel
                 $data[$i-2] = new User;
                 $data[$i-2]->kode = isset($this->data_file_excel->sheets[0]['cells'][$i][1])?$this->data_file_excel->sheets[0]['cells'][$i][1]:NULL;
                 $data[$i-2]->nama = isset($this->data_file_excel->sheets[0]['cells'][$i][2])?$this->data_file_excel->sheets[0]['cells'][$i][2]:NULL;
-                $data[$i-2]->alamat = isset($this->data_file_excel->sheets[0]['cells'][$i][3])?$this->data_file_excel->sheets[0]['cells'][$i][3]:NULL;
-                $data[$i-2]->jk = isset($this->data_file_excel->sheets[0]['cells'][$i][4])?$jk[$this->data_file_excel->sheets[0]['cells'][$i][4]]:NULL;
-                $data[$i-2]->pendidikan = isset($this->data_file_excel->sheets[0]['cells'][$i][5])?$this->data_file_excel->sheets[0]['cells'][$i][5]:NULL;
-                $data[$i-2]->umur = isset($this->data_file_excel->sheets[0]['cells'][$i][6])?$this->data_file_excel->sheets[0]['cells'][$i][6]:NULL;
-                $data[$i-2]->username = isset($this->data_file_excel->sheets[0]['cells'][$i][7])?$this->data_file_excel->sheets[0]['cells'][$i][7]:NULL;
-                $data[$i-2]->level_id = isset($this->data_file_excel->sheets[0]['cells'][$i][8])?$this->data_file_excel->sheets[0]['cells'][$i][8]:NULL;
-                $data[$i-2]->password = isset($this->data_file_excel->sheets[0]['cells'][$i][9])?$this->data_file_excel->sheets[0]['cells'][$i][9]:NULL;
+                $data[$i-2]->username = isset($this->data_file_excel->sheets[0]['cells'][$i][3])?$this->data_file_excel->sheets[0]['cells'][$i][3]:NULL;
+                $data[$i-2]->password = isset($this->data_file_excel->sheets[0]['cells'][$i][4])?$this->data_file_excel->sheets[0]['cells'][$i][4]:NULL;
+                $data[$i-2]->alamat = isset($this->data_file_excel->sheets[0]['cells'][$i][5])?$this->data_file_excel->sheets[0]['cells'][$i][5]:NULL;
+                $data[$i-2]->jk = isset($this->data_file_excel->sheets[0]['cells'][$i][6])?$this->data_file_excel->sheets[0]['cells'][$i][6]:NULL;
+                $data[$i-2]->pendidikan = isset($this->data_file_excel->sheets[0]['cells'][$i][7])?$this->data_file_excel->sheets[0]['cells'][$i][7]:NULL;
+                $data[$i-2]->jurusan = isset($this->data_file_excel->sheets[0]['cells'][$i][8])?$this->data_file_excel->sheets[0]['cells'][$i][8]:NULL;
+                $data[$i-2]->umur = isset($this->data_file_excel->sheets[0]['cells'][$i][9])?$this->data_file_excel->sheets[0]['cells'][$i][9]:NULL;
+                $data[$i-2]->nohp = isset($this->data_file_excel->sheets[0]['cells'][$i][10])?$this->data_file_excel->sheets[0]['cells'][$i][10]:NULL;
+                $data[$i-2]->ttl = isset($this->data_file_excel->sheets[0]['cells'][$i][11])?$this->data_file_excel->sheets[0]['cells'][$i][11]:NULL;
+                $data[$i-2]->status_kawin = isset($this->data_file_excel->sheets[0]['cells'][$i][12])?$this->data_file_excel->sheets[0]['cells'][$i][12]:NULL;
+                $data[$i-2]->pekerjaan = isset($this->data_file_excel->sheets[0]['cells'][$i][13])?$this->data_file_excel->sheets[0]['cells'][$i][13]:NULL;
+                $data[$i-2]->pengalaman = isset($this->data_file_excel->sheets[0]['cells'][$i][14])?$this->data_file_excel->sheets[0]['cells'][$i][14]:NULL;
+                $data[$i-2]->shift = isset($this->data_file_excel->sheets[0]['cells'][$i][15])?$this->data_file_excel->sheets[0]['cells'][$i][15]:NULL;
+                $data[$i-2]->rekomendasi = isset($this->data_file_excel->sheets[0]['cells'][$i][16])?$this->data_file_excel->sheets[0]['cells'][$i][16]:NULL;
+                $data[$i-2]->level_id = isset($this->data_file_excel->sheets[0]['cells'][$i][17])?$this->data_file_excel->sheets[0]['cells'][$i][17]:NULL;
+                
+                
                 if(!$data[$i-2]->validate()):
                     $error = TRUE;
                     $this->addError($attribute, 'Data nomor '.$i.' salah/tidak sesuai template.');
