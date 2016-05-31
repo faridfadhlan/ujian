@@ -191,7 +191,7 @@ class EntriController extends Controller
         }
         
         public function actionUjianentri() {
-            $max = 100000;
+            $max = 6000;
             $ujian = Ujian::model()->findByPk(3);
             if($ujian->status == '0' || !User::model()->isBuka(Yii::app()->user->id, $max)):
                 $this->render('belum_mulai');

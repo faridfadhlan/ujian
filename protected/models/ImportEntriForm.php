@@ -71,9 +71,9 @@ class ImportEntriForm extends CFormModel
             
             for($i=2; $i<=$this->data_file_excel->sheets[0]['numRows']; $i++) {
                 $data[$i-2] = new Entri;
-                $data[$i-2]->b4k2 = isset($this->data_file_excel->sheets[0]['cells'][$i][1])?$this->data_file_excel->sheets[0]['cells'][$i][1]:NULL;
-                $data[$i-2]->b4k3 = isset($this->data_file_excel->sheets[0]['cells'][$i][2])?$this->data_file_excel->sheets[0]['cells'][$i][2]:NULL;
-                $data[$i-2]->b4k5 = isset($this->data_file_excel->sheets[0]['cells'][$i][3])?$this->data_file_excel->sheets[0]['cells'][$i][3]:NULL;
+                $data[$i-2]->b4k2 = isset($this->data_file_excel->sheets[0]['cells'][$i][1])?trim_spasi($this->data_file_excel->sheets[0]['cells'][$i][1]):NULL;
+                $data[$i-2]->b4k3 = isset($this->data_file_excel->sheets[0]['cells'][$i][2])?trim_spasi($this->data_file_excel->sheets[0]['cells'][$i][2]):NULL;
+                $data[$i-2]->b4k5 = isset($this->data_file_excel->sheets[0]['cells'][$i][3])?trim_spasi($this->data_file_excel->sheets[0]['cells'][$i][3]):NULL;
                 if(!$data[$i-2]->validate()):
                     $error = TRUE;
                     $this->addError($attribute, 'Data nomor '.$i.' salah/tidak sesuai template.');

@@ -69,11 +69,23 @@ class User extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'kode' => 'Kode',
-			'nama' => 'Nama',
-			'username' => 'Username',
-			'password' => 'Password',
-			'level_id' => 'Level',
+			'kode'=>'Kode',
+                        'nama'=>'Nama',
+                        'username'=>'Username',
+                        'level_id'=>'Level',
+                        'alamat'=>'Alamat',
+                        'jk'=>'Jenis Kelamin',
+                        'umur'=>'Umur',
+                        'nohp'=>'No HP',
+                        'ttl'=>'Tempat Tanggal Lahir',
+                        'pendidikan'=>'Pendidikan',
+                        'jurusan'=>'Jurusan',
+                        'status_kawin'=>'Status Kawin',
+                        'pekerjaan'=>'Pekerjaan',
+                        'pengalaman'=>'Pengalaman',
+                        'shift'=>'Shift',
+                        'rekomendasi'=>'Rekomendasi'
+                        
 		);
 	}
 
@@ -153,7 +165,7 @@ class User extends CActiveRecord
         }
         
         public function beforeSave() {
-            if($this->isNewRecord) {
+            if($this->isNewRecord || $this->scenario = 'reset') {
                 $this->password = $this->hashPassword($this->password);
             }
             return parent::beforeSave();

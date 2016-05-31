@@ -72,6 +72,7 @@
 $cs=Yii::app()->getClientScript();
 $cs->registerCoreScript('jquery');
 $cs->registerScriptFile(Yii::app()->request->baseUrl.'/public/lib/bootstrap/js/bootstrap.js',CClientScript::POS_END);
+//$cs->registerScriptFile(Yii::app()->request->baseUrl.'/public/js/quirk.js',CClientScript::POS_END);
 ?>
 
 </body>

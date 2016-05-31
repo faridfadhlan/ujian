@@ -3,33 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/ujian/protected/views/user/reset.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/views/question/_form.php</file>
             <file>file:/C:/xampp/htdocs/ujian/protected/controllers/EntriController.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/models/User.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/index.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/ujian/detil_entri.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/ujian/nilai.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/entri/ujianentri.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/user/_form.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/entri/create.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/public/css/quirk.css</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/entri/import.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/layouts/column2.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/controllers/SiteController.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/models/ImportExcelForm.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/models/Entri.php</file>
             <file>file:/C:/xampp/htdocs/ujian/protected/models/ImportEntriForm.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/entri/_form.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/entri/belum_mulai.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/user/create.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/models/EntriTimer.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/entri/admin.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/components/helpers.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/models/User.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/public/js/quirk.js</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/controllers/UserController.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/index.php</file>
             <file>file:/C:/xampp/htdocs/ujian/protected/views/user/admin.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/config/main.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/ujian/detil_nilai.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/ujian/admin.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/models/UsersEntries.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/views/layouts/main.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/views/question/update.php</file>
             <file>file:/C:/xampp/htdocs/ujian/protected/controllers/UjianController.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/controllers/QuestionController.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/models/ResetForm.php</file>
         </group>
     </open-files>
 </project-private>

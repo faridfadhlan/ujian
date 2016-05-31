@@ -58,6 +58,7 @@ class UjianController extends Controller
                 $criteria->condition = "versi='".$versi."'";
                 $criteria->order = "jenis_pertanyaan ASC";
                 $model = Question::model()->findAll($criteria);
+                shuffle($model);
                 foreach($model as $data) {
                     $usersanswers = new UsersAnswers;
                     $usersanswers->question_id = $data->id;
@@ -72,6 +73,7 @@ class UjianController extends Controller
                 $criteria = new CDbCriteria();
                 $criteria->join = "INNER JOIN questions ON t.question_id=questions.id";
                 $criteria->condition = "questions.jenis_pertanyaan=".($i+1)." AND user_id=".Yii::app()->user->id;
+                $criteria->order = "t.id";
                 $models[$i] = UsersAnswers::model()->findAll($criteria);
             }
             $this->render('index', compact('models'));
@@ -234,6 +236,7 @@ class UjianController extends Controller
                             WHERE 
                                 ue.entri_id = e.id AND
                                 ue.user_id = u.id AND u.id=".$id."
+                            ORDER BY ue.user_id, ue.entri_id ASC
                         ")
                         ->queryAll();
             $this->render('detil_entri', compact('model'));

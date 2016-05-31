@@ -10,7 +10,7 @@
             
             foreach($models as $model):
             
-            shuffle($model);
+            //shuffle($model);
             ?>
             <?php foreach($model as $data):?>
             <?php $no++;?>

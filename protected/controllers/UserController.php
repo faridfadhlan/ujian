@@ -36,7 +36,7 @@ class UserController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','import'),
+				'actions'=>array('admin','delete','import','reset'),
 				'expression'=>array('Controller', 'harus_admin'),
 			),
 			array('deny',  // deny all users
@@ -178,5 +178,24 @@ class UserController extends Controller
                     Yii::app()->user->setFlash('success', $model->jumlah_import. " data berhasil diimport!");
             }
             $this->render('import', array('model'=>$model));
+        }
+        
+        public function actionReset($id) {
+            $model = new ResetForm;
+            if(isset($_POST['ResetForm']))
+            {
+                    $model->attributes=$_POST['ResetForm'];
+                    $user = User::model()->findByPk($id);
+                    $user->scenario='reset';
+                    if($model->validate()){
+                        $user->password = $model->password;
+                        $user->save(false);
+                            $this->redirect(array('admin'));
+                    }
+            }
+
+            $this->render('reset',array(
+                    'model'=>$model,
+            ));
         }
 }

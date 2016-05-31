@@ -27,10 +27,13 @@
                     <?php foreach($model as $data):?>
                       <tr>
                           <td class="text-center"><?php echo CHtml::encode($data->kode);?></td>
-                          <td><?php echo CHtml::encode($data->nama);?></td>
+                          <td><?php echo CHtml::link($data->nama, array("user/view", "id"=>$data->id));?></td>
                           <td><?php echo $data->username; ?></td>
                           <td><?php echo $data->level->level;?></td>
-                          <td class="text-center"><?php echo CHtml::link("", array("user/update", "id"=>$data->id), array("class"=>"fa fa-edit"));?>&nbsp;<a class="fa fa-trash-o" href="#"></a></td>
+                          <td class="text-center">
+                              <?php echo CHtml::link("", array("user/update", "id"=>$data->id), array("class"=>"fa fa-edit"));?>&nbsp;
+                              <?php echo CHtml::link("", array("user/reset", "id"=>$data->id), array("class"=>"fa fa-key"));?>&nbsp;
+                              <a class="fa fa-trash-o" href="#"></a></td>
                       </tr>
                       <?php endforeach;?>
                   </tbody>
