@@ -7,12 +7,9 @@
             <div class="panel-body" oncopy="return false" oncut="return false" onpaste="return false">
                 <div class="panel panel-danger panel-weather">
                     <div class="panel-heading">
-                      <h4 class="panel-title" style="text-align: center;">WAKTU TERSISA</h4>
+                      <h4 class="panel-title" style="text-align: center;">PERHATIAN</h4>
                     </div>
                     <div class="panel-body inverse" style="padding:5px;">
-                      <div class="row mb10">
-                          <h1 class="today-day" style="text-align: center;font-weight:bold;"></h1>
-                      </div>
                         <p style="text-align: center;text-transform: uppercase;">PERHATIAN : Jika membuka halaman yang lain, timer terus berjalan. Simpan dulu sebelum membuka halaman lain.<br /><span style="color:yellow;">Tekan (Enter) untuk menyimpan. Tekan (TAB) untuk pindah isian.</span></p>
                     </div>
                 </div>
@@ -70,6 +67,19 @@
               </div>
         </div>
       </div>
+
+<div id="fixed-timer">
+    <div class="panel panel-danger panel-weather">
+                    <div class="panel-heading" style="padding-top:10px;padding-bottom: 10px;">
+                      <h4 class="panel-title" style="text-align: center;">WAKTU TERSISA</h4>
+                    </div>
+                    <div class="panel-body inverse" style="padding:5px;">
+                      <div class="row mb10">
+                          <h1 class="today-day" style="text-align: center;font-weight:bold;"></h1>
+                      </div>
+                    </div>
+                </div>
+</div>
 
 <?php
 $cs=Yii::app()->getClientScript();

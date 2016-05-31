@@ -14591,3 +14591,11 @@ table.description th{
     text-transform: uppercase;
 }
 
+#fixed-timer {
+    position: fixed;
+    bottom:2%;
+    left:1%;
+    width:190px;
+    z-index: 100;
+}
+
