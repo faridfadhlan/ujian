@@ -106,6 +106,22 @@
     
 </div>
   </div><!-- row -->
+  
+<div id="fixed-timer">
+    
+    
+    
+    <div class="panel panel-danger panel-weather" style="margin-bottom:5px;">
+                    <div class="panel-heading" style="padding-top:10px;padding-bottom: 10px;">
+                      <h4 class="panel-title" style="text-align: center;">WAKTU TERSISA</h4>
+                    </div>
+                    <div class="panel-body inverse" style="padding:5px;">
+                      <div class="row mb10">
+                          <h1 class="today-day" style="text-align: center;font-weight:bold;"></h1>
+                      </div>
+                    </div>
+                </div>
+</div>
 
 <?php
 $cs=Yii::app()->getClientScript();
@@ -121,18 +137,22 @@ $('#wizard-basic').steps({
     transitionEffect: 'slideLeft',
     autoFocus: true,
     showFinishButtonAlways: true,
-    onFinishing: simpan, 
+    onFinishing: simpan,
+    onStepChanged: function (event, currentIndex, priorIndex) { $('div.content').scrollTop(0); },
     labels: {
         finish: 'Save',
         next: 'Next',
         previous: 'Previous',
     }
   });
+  
+    var durasi = ".$durasi.", display = $('.today-day');
+    startTimer(durasi, display);
 ");
 $cs->registerScript("fungsi", '
     
 setInterval(cekujian, 10000);
-setInterval(simpan, 300000);
+setInterval(simpan_tanpa_animasi, 10000);
 
 function cekujian() {
     $.ajax({
@@ -140,12 +160,27 @@ function cekujian() {
         url: "'.Yii::app()->createUrl("ujian/cek").'",
         success: function(data) {
             if(data=="0"){
-                simpan();
-                location.reload();
+                simpan_tutup();
             }
         },
     });
 }
+
+function simpan_tutup() {
+    $.ajax({
+        type: "POST",
+        url: "'.Yii::app()->createUrl("ujian/simpan").'",
+        data: $("#form_soal").serialize(),
+        beforeSend: function() {
+            $(".modal").modal("show"); 
+        },
+        success: function(data) {
+            $(".modal").modal("hide");
+            location.reload();
+        },
+    });
+}
+
 function simpan() {
     $.ajax({
         type: "POST",
@@ -155,9 +190,37 @@ function simpan() {
             $(".modal").modal("show"); 
         },
         success: function(data) {
-            $(".modal").modal("hide"); 
+            $(".modal").modal("hide");
         },
     });
 }
+
+function simpan_tanpa_animasi() {
+    $.ajax({
+        type: "POST",
+        url: "'.Yii::app()->createUrl("ujian/simpan").'",
+        data: $("#form_soal").serialize(),
+        success: function(data) {}
+    });
+}
+
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    var tes = setInterval(function () {
+        minutes = parseInt(timer / 60, 10)
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.text(minutes + ":" + seconds);
+
+        if (--timer < 0) {
+            clearInterval(tes);
+            simpan_tutup();
+        }
+    }, 1000);
+}
+
 ', CClientScript::POS_END);
 ?>

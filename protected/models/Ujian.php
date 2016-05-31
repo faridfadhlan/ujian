@@ -31,7 +31,7 @@ class Ujian extends CActiveRecord
 			array('status', 'length', 'max'=>1),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nama, status', 'safe', 'on'=>'search'),
+			array('id, nama, status, mulai', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,6 +55,7 @@ class Ujian extends CActiveRecord
 			'id' => 'ID',
 			'nama' => 'Nama',
 			'status' => 'Status',
+                        'mulai' => 'Mulai'
 		);
 	}
 

@@ -16,32 +16,30 @@
                 <div class="clearfix"></div>
                 <div class="form">
                     <form id="form_entri">
+                        <?php $i = 1;?>
                     <?php foreach($soals as $soal):?>
                     <div class="col-md-4">
                         <div class="form-group">
                             <?php echo CHtml::label($soal->entrinya->b4k2, NULL); ?>
-                            <?php echo CHtml::textField('q['.$soal->id.'][b4k2]', $soal->b4k2, array('class'=>'form-control entri')); ?>                        
+                            <?php echo CHtml::textField('q['.$soal->id.'][b4k2]', $soal->b4k2, array('class'=>'form-control entri',"tabindex"=>$i++)); ?>                        
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <?php echo CHtml::label($soal->entrinya->b4k3, NULL); ?>
-                            <?php echo CHtml::textField('q['.$soal->id.'][b4k3]', $soal->b4k3, array('class'=>'form-control entri')); ?>                        
+                            <?php echo CHtml::textField('q['.$soal->id.'][b4k3]', $soal->b4k3, array('class'=>'form-control entri',"tabindex"=>$i++)); ?>                        
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <?php echo CHtml::label($soal->entrinya->b4k5, NULL); ?>
-                            <?php echo CHtml::textField('q['.$soal->id.'][b4k5]', $soal->b4k5, array('class'=>'form-control entri')); ?>                        
+                            <?php echo CHtml::textField('q['.$soal->id.'][b4k5]', $soal->b4k5, array('class'=>'form-control entri',"tabindex"=>$i++)); ?>                        
                         </div>
                     </div>
                         <div class="clearfix"></div>
                         <hr>
                     <?php endforeach;?>
-                    <?php 
-                    //echo CHtml::submitButton("Simpan", array("class"=>"btn btn-primary"));
-                    echo CHtml::htmlButton("Simpan", array("onClick"=>"confirm_simpan()", "class"=>"btn btn-primary"));
-                    ?>
+                    
                     </form>
                 </div>
             </div>
@@ -69,7 +67,10 @@
       </div>
 
 <div id="fixed-timer">
-    <div class="panel panel-danger panel-weather">
+    
+    
+    
+    <div class="panel panel-danger panel-weather" style="margin-bottom:5px;">
                     <div class="panel-heading" style="padding-top:10px;padding-bottom: 10px;">
                       <h4 class="panel-title" style="text-align: center;">WAKTU TERSISA</h4>
                     </div>
@@ -79,13 +80,15 @@
                       </div>
                     </div>
                 </div>
+    <?php echo CHtml::htmlButton("Simpan", array("onClick"=>"confirm_simpan()", "class"=>"btn btn-primary btn-block", "tabindex"=>$i++));
+                    ?>
 </div>
 
 <?php
 $cs=Yii::app()->getClientScript();
 $cs->registerScript("entri", '
 //setInterval(cekujian, 10000);
-//setInterval(simpan, 300000);
+setInterval(simpan_tanpa_animasi, 60000);
 
 
 function cekujian() {
@@ -102,13 +105,14 @@ function cekujian() {
 }
 
 function confirm_simpan() {
-    var answer = confirm ("Semakin cepat mengentri, poin Anda semakin besar. Jika sebelumnya pernah menyimpan, durasi pengerjaan akan diubah berdasarkan waktu sekarang. Setuju?");
-    if (answer){
-        simpan();
-    }
-    else{
-      return false;
-    }
+    simpan();
+    //var answer = confirm ("Semakin cepat mengentri, poin Anda semakin besar. Jika sebelumnya pernah menyimpan, durasi pengerjaan akan diubah berdasarkan waktu sekarang. Setuju?");
+    //if (answer){
+    //    simpan();
+    //}
+    //else{
+    //  return false;
+    //}
 }
 
 function ceksimpan() {
@@ -140,6 +144,17 @@ function simpan() {
     });
 }
 
+function simpan_tanpa_animasi() {
+    $.ajax({
+        type: "POST",
+        url: "'.Yii::app()->createUrl("entri/simpan").'",
+        data: $("#form_entri").serialize(),
+        success: function(data) {
+            //location.reload();
+        }
+    });
+}
+
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     var tes = setInterval(function () {
@@ -163,9 +178,14 @@ function startTimer(duration, display) {
 $cs->registerScript("ready", '
     var durasi = '.$durasi.', display = $(".today-day");
     startTimer(durasi, display);
-    $("input.entri").keypress(function(e) {
+    var currentindex;
+    $("input").keypress(function(e) {
         if (e.which == 13) {
-            confirm_simpan();
+            //confirm_simpan();
+            currentindex = parseInt($(this).attr("tabindex"));
+            nextindex = currentindex+1;
+            //alert(nextindex);
+            $("*[tabindex="+nextindex+"]").focus();
         }
     });
 ');

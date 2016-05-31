@@ -17,7 +17,7 @@ class SiteController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to access 'index' and 'view' actions.
-				'actions'=>array('login', 'hash', 'generate'),
+				'actions'=>array('login', 'hash', 'generate','tes'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated users to access all actions
@@ -125,6 +125,10 @@ class SiteController extends Controller
 	}
         
         public function actionHash($password) {
-            echo User::model()->hashPassword($password);
+                echo User::model()->hashPassword($password);
+        }
+        
+        public function actionTes() {
+            $this->render('tes');
         }
 }

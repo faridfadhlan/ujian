@@ -42,8 +42,9 @@ class UjianController extends Controller
         
         public function actionMulai()
         {
+            $max = 1140;
             $ujian = Ujian::model()->findByPk(1);
-            if($ujian->status == '0'):
+            if($ujian->status == '0' || (time() - strtotime($ujian->mulai))>$max):
                 $this->render('belum_mulai');
             else:
             
@@ -76,14 +77,18 @@ class UjianController extends Controller
                 $criteria->order = "t.id";
                 $models[$i] = UsersAnswers::model()->findAll($criteria);
             }
-            $this->render('index', compact('models'));
+            
+            
+            $durasi = $max - (time() - strtotime($ujian->mulai));
+            
+            $this->render('index', compact('models', 'durasi'));
             
             endif;
         }
         
         public function actionSimpan() {
             if(Yii::app()->request->isAjaxRequest){
-                //sleep(1);
+                
                 $jawaban = $_POST['q'];
                 foreach($jawaban as $key => $value) {
                     //echo $key;
@@ -104,11 +109,12 @@ class UjianController extends Controller
             
             if($jenis == 1) {
                 $ujian = Ujian::model()->findByPk(1);
-                if($ujian->status == '0')
+                if($ujian->status == '0') {
                     $ujian->status = '1';
+                    $ujian->mulai = date("H:i:s");
+                }
                 else {
                     $ujian->status = '0';
-                    
                 }
                 $ujian->save();
             }

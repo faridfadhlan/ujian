@@ -3,23 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/user/reset.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/views/layouts/column2.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/views/question/admin.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/views/site/index.php</file>
             <file>file:/C:/xampp/htdocs/ujian/protected/views/question/_form.php</file>
             <file>file:/C:/xampp/htdocs/ujian/protected/controllers/EntriController.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/models/ImportEntriForm.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/models/User.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/public/js/quirk.js</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/controllers/UserController.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/index.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/site/index.php</file>
             <file>file:/C:/xampp/htdocs/ujian/protected/views/entri/ujianentri.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/user/admin.php</file>
             <file>file:/C:/xampp/htdocs/ujian/public/css/quirk.css</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/layouts/main.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/views/question/update.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/models/Ujian.php</file>
+            <file>file:/C:/xampp/htdocs/ujian/protected/views/ujian/index.php</file>
             <file>file:/C:/xampp/htdocs/ujian/protected/controllers/UjianController.php</file>
             <file>file:/C:/xampp/htdocs/ujian/protected/controllers/QuestionController.php</file>
-            <file>file:/C:/xampp/htdocs/ujian/protected/models/ResetForm.php</file>
         </group>
     </open-files>
 </project-private>
