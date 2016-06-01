@@ -30,12 +30,12 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <?php echo $form->labelEx($model,'password'); ?>
-                                    <?php echo $form->textField($model,'password',array('class'=>'form-control')); ?>
+                                    <?php echo $form->passwordField($model,'password',array('class'=>'form-control')); ?>
                                 </div>
 
                                 <div class="form-group">
                                     <?php echo $form->labelEx($model,'password_confirmation'); ?>
-                                    <?php echo $form->textField($model,'password_confirmation',array('class'=>'form-control')); ?>
+                                    <?php echo $form->passwordField($model,'password_confirmation',array('class'=>'form-control')); ?>
                                 </div>
                                 <div class="form-group">
                                     <button class="btn btn-primary">Simpan</button>

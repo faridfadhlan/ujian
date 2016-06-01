@@ -42,7 +42,7 @@ class UjianController extends Controller
         
         public function actionMulai()
         {
-            $max = 1140;
+            $max = 2400;
             $ujian = Ujian::model()->findByPk(1);
             if($ujian->status == '0' || (time() - strtotime($ujian->mulai))>$max):
                 $this->render('belum_mulai');

@@ -177,21 +177,22 @@ class EntriController extends Controller
         
         public function actionPernahsimpan() {
             if(Yii::app()->request->isAjaxRequest) {
-                $timer = EntriTimer::model()->find("user_id=:user_id", array(":user_id"=>Yii::app()->user->id));
-                if($timer != NULL) {
-                    if($timer->waktu_selesai != NULL) echo "sudah";
-                    else {
-                        echo "belum";
-                    }
-                }
-                else {
-                    echo "belum";
-                }
+                echo "belum";
+                //$timer = EntriTimer::model()->find("user_id=:user_id", array(":user_id"=>Yii::app()->user->id));
+                //if($timer != NULL) {
+                //    if($timer->waktu_selesai != NULL) echo "sudah";
+                //    else {
+                //        echo "belum";
+                //    }
+                //}
+                //else {
+                //    echo "belum";
+                //}
             }
         }
         
         public function actionUjianentri() {
-            $max = 6000;
+            $max = 1800;
             $ujian = Ujian::model()->findByPk(3);
             if($ujian->status == '0' || !User::model()->isBuka(Yii::app()->user->id, $max)):
                 $this->render('belum_mulai');
@@ -202,6 +203,8 @@ class EntriController extends Controller
                     Yii::app()->user->level_id == '2' && 
                     !User::model()->hasEntri(Yii::app()->user->id)
                 ):
+                $crit = new CDbCriteria;
+                $crit->order = 'id ASC';
                 $model = Entri::model()->findAll();
                 foreach($model as $data) {
                     $usersentries = new UsersEntries;
@@ -223,7 +226,7 @@ class EntriController extends Controller
             
             $criteria = new CDbCriteria;
             $criteria->condition = 'user_id='.Yii::app()->user->id;
-            $criteria->order = 'id ASC';
+            $criteria->order = 'user_id, entri_id ASC';
             
             $soals = UsersEntries::model()->findAll($criteria);
             $this->render("ujianentri", compact('soals', 'durasi'));

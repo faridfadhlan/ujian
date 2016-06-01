@@ -171,6 +171,7 @@ class UserController extends Controller
 	}
         
         public function actionImport() {
+            set_time_limit (120);
             $model = new ImportExcelForm;
             if(isset($_POST['ImportExcelForm'])) {
                 $model->attributes = $_POST['ImportExcelForm'];
@@ -185,11 +186,13 @@ class UserController extends Controller
             if(isset($_POST['ResetForm']))
             {
                     $model->attributes=$_POST['ResetForm'];
-                    $user = User::model()->findByPk($id);
-                    $user->scenario='reset';
+                    
                     if($model->validate()){
+                        $user = User::model()->findByPk($id);
+                        $user->scenario='reset';
                         $user->password = $model->password;
-                        $user->save(false);
+                        //echo $user->password;exit;
+                        $user->save();
                             $this->redirect(array('admin'));
                     }
             }

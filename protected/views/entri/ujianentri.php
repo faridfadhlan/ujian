@@ -16,28 +16,30 @@
                 <div class="clearfix"></div>
                 <div class="form">
                     <form id="form_entri">
-                        <?php $i = 1;?>
+                        <?php $i = 1;$row = 1;?>
                     <?php foreach($soals as $soal):?>
+                        
                     <div class="col-md-4">
                         <div class="form-group">
                             <?php echo CHtml::label($soal->entrinya->b4k2, NULL); ?>
-                            <?php echo CHtml::textField('q['.$soal->id.'][b4k2]', $soal->b4k2, array('class'=>'form-control entri',"tabindex"=>$i++)); ?>                        
+                            <?php echo CHtml::textField('q['.$soal->id.'][b4k2]', $soal->b4k2, array('class'=>'form-control entri',"tabindex"=>$i++, "spellcheck"=>"false", "disabled"=>"disabled", "roworder"=>$row)); ?>                        
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <?php echo CHtml::label($soal->entrinya->b4k3, NULL); ?>
-                            <?php echo CHtml::textField('q['.$soal->id.'][b4k3]', $soal->b4k3, array('class'=>'form-control entri',"tabindex"=>$i++)); ?>                        
+                            <?php echo CHtml::textField('q['.$soal->id.'][b4k3]', $soal->b4k3, array('class'=>'form-control entri',"tabindex"=>$i++, "spellcheck"=>"false", "disabled"=>"disabled", "roworder"=>$row)); ?>                        
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <?php echo CHtml::label($soal->entrinya->b4k5, NULL); ?>
-                            <?php echo CHtml::textField('q['.$soal->id.'][b4k5]', $soal->b4k5, array('class'=>'form-control entri',"tabindex"=>$i++)); ?>                        
+                            <?php echo CHtml::textField('q['.$soal->id.'][b4k5]', $soal->b4k5, array('class'=>'form-control entri',"tabindex"=>$i++, "spellcheck"=>"false", "disabled"=>"disabled", "roworder"=>$row)); ?>                        
                         </div>
                     </div>
                         <div class="clearfix"></div>
                         <hr>
+                        <?php $row++;?>
                     <?php endforeach;?>
                     
                     </form>
@@ -155,6 +157,11 @@ function simpan_tanpa_animasi() {
     });
 }
 
+function cek_complete(i) {
+    if($("input[tabindex="+(i*3+1)+"]").val().length > 0 && $("input[tabindex="+(i*3+2)+"]").val().length > 0 && $("input[tabindex="+(i*3+3)+"]").val().length >0) return true;
+    return false;
+}
+
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     var tes = setInterval(function () {
@@ -179,7 +186,8 @@ $cs->registerScript("ready", '
     var durasi = '.$durasi.', display = $(".today-day");
     startTimer(durasi, display);
     var currentindex;
-    $("input").keypress(function(e) {
+    $("input").keyup(function(e) {
+        //alert($(this).val().length);
         if (e.which == 13) {
             //confirm_simpan();
             currentindex = parseInt($(this).attr("tabindex"));
@@ -187,6 +195,21 @@ $cs->registerScript("ready", '
             //alert(nextindex);
             $("*[tabindex="+nextindex+"]").focus();
         }
+        
+        current = parseInt($(this).attr("roworder"));
+        if(cek_complete(current-1)) {
+            $("input[roworder="+(current+1)+"]").removeAttr( "disabled" );
+        }
+        else {
+            $("input[roworder="+(current+1)+"]").attr( "disabled", "disabled" );
+        }
     });
+    $("input[roworder=1]").removeAttr( "disabled" );
+    for(i=0;i<100;i++){
+        if(cek_complete(i)){
+            $("input[roworder="+(i+2)+"]").removeAttr( "disabled" );
+        }
+    }
+    
 ');
 ?>
